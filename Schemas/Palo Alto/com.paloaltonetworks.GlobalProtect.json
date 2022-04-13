@@ -1,0 +1,16 @@
+{
+  "title": "PaloAlto GlobalProtect Server Settings (com.paloaltonetworks.GlobalProtect)",
+  "description": "Configures PaloAlto GlobalProtect Server Addresses",
+  "properties": {
+    "PanPortalList": {
+      "title": "GlobalProtect Gateway Addresses",
+      "description": "Define PaloAlto GlobalProtect Gateway Addresses",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "title": "GlobalProtect Gateway Address"
+      },
+      "property_order": 15
+    }
+  }
+}
