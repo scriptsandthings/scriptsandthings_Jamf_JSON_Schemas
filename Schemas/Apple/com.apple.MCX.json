@@ -1,0 +1,89 @@
+{
+  "title": "Time Server, Internet Sharing, and Guest Account Preferences",
+  "description": "Managed NTP Servers, Internet Sharing, Guest Login",
+  "__version": "1.0",
+  "__preferencedomain": "com.apple.MCX",
+  "options": {
+    "remove_empty_properties": true
+  },
+  "properties": {
+    "timeServer": {
+      "title": "Time Server Address(es)",
+      "description": "(timeServer)-The NTP server to connect to. Use commas to separate multiple time servers",
+      "propertyOrder": 10,
+      "options": {
+        "inputAttributes": {
+          "placeholder": "time.apple.com"
+        }
+      },
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "string"
+        }
+      ]
+    },
+    "timeZone": {
+      "title": "Time Zone",
+      "description": "(timeZone)-The time zone path location string in /usr/share/zoneinfo/; for example, America/Denver or Zulu",
+      "propertyOrder": 15,
+      "options": {
+        "inputAttributes": {
+          "placeholder": "America/New_York"
+        }
+      },
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "string"
+        }
+      ]
+    },
+     "DisableGuestAccount": {
+            "title": "Disable Guest Account Access",
+            "description": "If true, disables the ability to login with the Guest Account",
+            "propertyOrder": 20,
+            "anyOf": [
+				{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: Disable Guest Account"
+					}
+				}
+			]
+		},
+     "forceInternetSharingOff": {
+            "title": "Force Internet Sharing Off",
+            "description": "If true, force disables Internet Sharing",
+            "propertyOrder": 20,
+            "anyOf": [
+				{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: Force Internet Sharing Off"
+					}
+				}
+			]
+		}
+	}
+}
