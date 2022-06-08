@@ -1,6 +1,7 @@
 {
   "title": "Time Server, Internet Sharing, and Guest Account Preferences",
   "description": "Managed NTP Servers, Internet Sharing, Guest Login",
+  "__feedback": "gmknacks@gmail.com",
   "__version": "1.0",
   "__preferencedomain": "com.apple.MCX",
   "options": {
