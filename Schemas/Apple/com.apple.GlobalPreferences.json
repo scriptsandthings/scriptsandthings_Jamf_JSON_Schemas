@@ -105,38 +105,38 @@
             "description": "If true, enables display of all filename extensions",
             "propertyOrder": 35,
             "anyOf": [
-				{
-					"title": "Not Configured",
-					"type": "null"
-				},
-				{
-					"title": "Configured",
-					"type": "boolean",
-					"default": true,
-					"options": {
-						"infoText": "Key: Force Internet Sharing Off"
-					}
-				}
-			]
+		{
+			"title": "Not Configured",
+			"type": "null"
 		},
+		{
+			"title": "Configured",
+			"type": "boolean",
+			"default": true,
+		"options": {
+			"infoText": "Key: Force Internet Sharing Off"
+			}
+		}
+	]
+	},
      "MultipleSessionEnabled": {
             "title": "Disable Fast User Switching",
             "description": "If false, disables Fast User Switching",
             "propertyOrder": 40,
             "anyOf": [
-				{
-					"title": "Not Configured",
-					"type": "null"
-				},
-				{
-					"title": "Configured",
-					"type": "boolean",
-					"default": false,
-					"options": {
-						"infoText": "Key: Disable Fast User Switching"
-					}
-				}
-			]
+		{
+			"title": "Not Configured",
+			"type": "null"
+		},
+		{
+			"title": "Configured",
+			"type": "boolean",
+			"default": false,
+		"options": {
+			"infoText": "Key: Disable Fast User Switching"
+			}
 		}
+		]
+	}
 	}
 }
