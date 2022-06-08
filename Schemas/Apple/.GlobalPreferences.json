@@ -101,7 +101,7 @@
       ]
     },
      "AppleShowAllExtensions": {
-            "title": "Turn on filename extensions",
+            "title": "Display all filename extensions",
             "description": "If true, enables display of all filename extensions",
             "propertyOrder": 35,
             "anyOf": [
