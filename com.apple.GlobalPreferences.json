@@ -1,0 +1,141 @@
+{
+  "title": "macOS Fast User Switching, Show Filename Extensions, and Automatic Text Corrections (com.apple.GlobalPreferences)",
+  "description": "Preference settings for system-wide automatic text replacements: Correct spelling automatically, Capitalize words automatically, Add period with double-space, Touch Bar typing suggestions and Use smart quotes and dashes. Corresponds to System Preferences > Keyboard > Text tab. As well as preferences to disable Fast User Switching and to ensure that all file extensions are displayed.",
+  "__feedback": "gmknacks@gmail.com",
+  "properties": {
+    "NSAutomaticCapitalizationEnabled": {
+      "title": "Automatic Capitalization",
+      "description": "Capitalize words automatically.",
+      "property_order": 5,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+    "NSAutomaticDashSubstitutionEnabled": {
+      "title": "Automatic Dash Substitution",
+      "description": "Use smart dashes. Replace double-dashes with emdash.",
+      "property_order": 10,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+    "NSAutomaticPeriodSubstitutionEnabled": {
+      "title": "Automatic Period Substitution",
+      "description": "Convert double-space to period.",
+      "property_order": 15,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+    "NSAutomaticQuoteSubstitutionEnabled": {
+      "title": "Automatic Quote Substitution",
+      "description": "Use smart quotes. Replace straight quotes with curly quotes.",
+      "property_order": 20,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+    "NSAutomaticSpellingCorrectionEnabled": {
+      "title": "Automatic Spelling Correction",
+      "description": "Correct spelling automatically.",
+      "property_order": 25,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+    "NSAutomaticTextCompletionEnabled": {
+      "title": "Automatic Text Completion",
+      "description": "Suggest corrections and replace text automatically.",
+      "property_order": 30,
+      "type": "integer",
+      "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        1,
+        0
+      ]
+    },
+     "AppleShowAllExtensions": {
+            "title": "Turn on filename extensions",
+            "description": "If true, enables display of all filename extensions",
+            "propertyOrder": 35,
+            "anyOf": [
+				{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: Force Internet Sharing Off"
+					}
+				}
+			]
+		},
+     "MultipleSessionEnabled": {
+            "title": "Disable Fast User Switching",
+            "description": "If false, disables Fast User Switching",
+            "propertyOrder": 40,
+            "anyOf": [
+				{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: Disable Fast User Switching"
+					}
+				}
+			]
+		}
+	}
+}
