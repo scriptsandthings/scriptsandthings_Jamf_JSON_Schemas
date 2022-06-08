@@ -1,6 +1,8 @@
 { 
 	"title": "VMware Horizon Client (com.vmware.horizon)",
 	"description": "Configures VMware Horizon Client Settings",
+        "__feedback": "shitttyscripts@gmail.com",
+        "__version": "1.0",
 	"properties": {
 		"autoHideAfterLaunched": {
 			"type": "boolean",
