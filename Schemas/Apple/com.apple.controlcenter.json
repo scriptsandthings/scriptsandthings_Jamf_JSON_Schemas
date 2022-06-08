@@ -1,0 +1,81 @@
+{
+    "title": "com.apple.controlcenter",
+    "description": "Preference Domain: com.apple.controlcenter,  Application: macOS Restrictions",
+    "__version": "1.0",
+    "__feedback": "shitttyscripts@gmail.com",
+    "type": "object",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+            "AirplayRecieverEnabled": {
+            "title": "Allow Airplay Receiver",
+            "description": "macOS 12 or Later. If set to false, restricts ability to AirPlay to Mac. (Yes, the key is actually spelled wrong).",
+            "propertyOrder": 10,
+            "anyOf": [
+                            {
+                                "title": "Not Configured",
+                                "type": "null"
+                            },
+                            {
+                                "title": "Configured",
+                                "type": "boolean",
+                                "default": true,
+                                "options": {
+                                    "infoText": "Key: AirplayRecieverEnabled"
+                                }
+                            }
+            ]
+        },
+        "Bluetooth": {
+			"title": "Display Bluetooth Status in Menu Bar",
+            "type": "integer",
+			"propertyOrder": 15,
+            "description": "macOS 12 or Later. If set to 18 will set the Bluetooth status to display in the Menu Bar. If set to 24 will remove the Bluetooth status from the Menu Bar",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:6aa727a7dff0028618ec420205f86cc6"
+                }
+            ],
+            "anyOf": [
+                            {
+                                "title": "Not Configured",
+                                "type": "null"
+                            },
+                            {
+                                "title": "Configured",
+                                "type": "integer",
+                                "options": {
+                                    "infoText": "Key: Bluetooth"
+					}
+				}
+			]
+	},
+        "WiFi": {
+			"title": "Display WiFi Status in Menu Bar",
+            "type": "integer",
+			"propertyOrder": 15,
+            "description": "macOS 12 or Later. If set to 18 will set the WiFi status to display in the Menu Bar. If set to 24 will remove the Bluetooth status from the Menu Bar",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:f98b83670fc705e37d423846e021bf5a"
+                }
+            ],
+            "anyOf": [
+                            {
+                                "title": "Not Configured",
+                                "type": "null"
+                            },
+                            {
+                                "title": "Configured",
+                                "type": "integer",
+                                "options": {
+                                    "infoText": "Key: WiFi"
+					}
+				}
+			]
+		}
+	}
+}
