@@ -2,6 +2,7 @@
   "title": "macOS Fast User Switching, Show Filename Extensions, and Automatic Text Corrections (com.apple.GlobalPreferences)",
   "description": "Preference settings for system-wide automatic text replacements: Correct spelling automatically, Capitalize words automatically, Add period with double-space, Touch Bar typing suggestions and Use smart quotes and dashes. Corresponds to System Preferences > Keyboard > Text tab. As well as preferences to disable Fast User Switching and to ensure that all file extensions are displayed.",
   "__feedback": "gmknacks@gmail.com",
+  "__version": "1.0",
   "properties": {
     "NSAutomaticCapitalizationEnabled": {
       "title": "Automatic Capitalization",
