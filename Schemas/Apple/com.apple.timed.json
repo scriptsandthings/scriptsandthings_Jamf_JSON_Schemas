@@ -1,23 +1,52 @@
 {
   "title": "Automatic Time Update and Timezone Settings",
   "description": "Force enable the automatic update of date/time, as well as automatically setting the system's current time zone",
-  "__version": "2.0",
+  "__version": "2.5",
   "__feedback": "shitttyscripts@gmail.com",
   "__preferencedomain": "com.apple.timed",
+  "options": {
+    "remove_empty_properties": true
+  },
   "properties": {
     "TMAutomaticTimeOnlyEnabled": {
-      "title": "Force Automatic Date/Time Updates",
+      "title": "Force Automatic Date/Time Updates Only",
       "description": "If true, disables the ability to manually set the date and time",
       "type": "boolean",
       "propertyOrder": 5,
-      "default": "true"
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean",
+          "default": true,
+          "options": {
+            "infoText": "Key: TMAutomaticTimeOnlyEnabled"
+          }
+        }
+      ]
     },
     "TMAutomaticTimeZoneEnabled": {
       "title": "Set Timezone Automatically",
       "description": "If true, force enables setting the Time Zone automatically",
       "type": "boolean",
       "propertyOrder": 10,
-      "default": "true"
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean",
+          "default": true,
+          "options": {
+            "infoText": "Key: TMAutomaticTimeZoneEnabled"
+          }
+        }
+      ]
     }
   }
 }
