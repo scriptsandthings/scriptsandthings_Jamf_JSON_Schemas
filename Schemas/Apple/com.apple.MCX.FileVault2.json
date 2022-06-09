@@ -2,12 +2,18 @@
   "title": "Enable FileVault",
   "description": "Enables FileVault 2 disk encryption.",
   "__feedback": "shitttyscripts@gmail.com",
-  "__version": "1.0",
+  "__version": "1.1",
   "__preferencedomain": "com.apple.MCX.FileVault2",
   "properties": {
     "Enable": {
       "title": "Enable FileVault",
       "description": "Set to true to enable FileVault.",
+      "links": [
+        {
+          "rel": "More information",
+          "href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+        }
+      ],
       "type": "boolean",
       "propertyOrder": 5,
       "default": "true",
