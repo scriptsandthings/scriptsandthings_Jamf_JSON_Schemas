@@ -1,0 +1,19 @@
+{
+	"title": "Disable Diagnostic Data Autosubmission",
+	"description": "Disables autosubmission of diagnostic data to Apple which may contain business classified information",
+	"__feedback": "shitttyscripts@gmail.com",
+  "__version": "1.0",
+	"__preferencedomain": "com.apple.SubmitDiagInfo",
+	"properties": {
+		"AutoSubmit": {
+			"title": "Enable automatic submission of diagnostic data",
+			"description": "Set to false to disable automatic submission of diagnostic data. Apple provides a mechanism to send diagnostic and analytics data back to Apple to help them improve the platform. Information sent to Apple may contain internal organizational information that should be controlled and not available for processing by Apple. Turn off all Analytics and Improvements sharing.",
+			"type": "boolean",
+			"propertyOrder": 5,
+			"default": "false",
+			"options": {
+				"infoText": "Key: AutoSubmit"
+			}
+		}
+	}
+}
