@@ -1,142 +1,164 @@
 {
-  "title": "macOS Fast User Switching, Show Filename Extensions, and Automatic Text Corrections (.GlobalPreferences) https://developer.apple.com/documentation/devicemanagement/globalpreferences",
-  "description": "Preference settings for system-wide automatic text replacements: Correct spelling automatically, Capitalize words automatically, Add period with double-space, Touch Bar typing suggestions and Use smart quotes and dashes. Corresponds to System Preferences > Keyboard > Text tab. As well as preferences to disable Fast User Switching and to ensure that all file extensions are displayed.",
-  "__feedback": "shitttyscripts@gmail.com",
-  "__version": "1.0",
-  "properties": {
-    "NSAutomaticCapitalizationEnabled": {
-      "title": "Automatic Capitalization",
-      "description": "Capitalize words automatically.",
-      "property_order": 5,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-    "NSAutomaticDashSubstitutionEnabled": {
-      "title": "Automatic Dash Substitution",
-      "description": "Use smart dashes. Replace double-dashes with emdash.",
-      "property_order": 10,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-    "NSAutomaticPeriodSubstitutionEnabled": {
-      "title": "Automatic Period Substitution",
-      "description": "Convert double-space to period.",
-      "property_order": 15,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-    "NSAutomaticQuoteSubstitutionEnabled": {
-      "title": "Automatic Quote Substitution",
-      "description": "Use smart quotes. Replace straight quotes with curly quotes.",
-      "property_order": 20,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-    "NSAutomaticSpellingCorrectionEnabled": {
-      "title": "Automatic Spelling Correction",
-      "description": "Correct spelling automatically.",
-      "property_order": 25,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-    "NSAutomaticTextCompletionEnabled": {
-      "title": "Automatic Text Completion",
-      "description": "Suggest corrections and replace text automatically.",
-      "property_order": 30,
-      "type": "integer",
-      "options": {
-        "enum_titles": [
-          "On",
-          "Off"
-        ]
-      },
-      "enum": [
-        1,
-        0
-      ]
-    },
-     "AppleShowAllExtensions": {
-            "title": "Display all filename extensions",
-            "description": "If true, enables display of all filename extensions",
-            "propertyOrder": 35,
-            "anyOf": [
-		{
-			"title": "Not Configured",
-			"type": "null"
+	"title": "macOS Fast User Switching, Show Filename Extensions, and Automatic Text Corrections (.GlobalPreferences) https://developer.apple.com/documentation/devicemanagement/globalpreferences",
+	"description": "Preference settings for system-wide automatic text replacements: Correct spelling automatically, Capitalize words automatically, Add period with double-space, Touch Bar typing suggestions and Use smart quotes and dashes. Corresponds to System Preferences > Keyboard > Text tab. As well as preferences to disable Fast User Switching and to ensure that all file extensions are displayed.",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__version": "1.5",
+	"properties": {
+		"NSAutomaticCapitalizationEnabled": {
+			"title": "Automatic Capitalization",
+			"description": "Capitalize words automatically.",
+			"property_order": 5,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+					],
+				"infoText": "Key: NSAutomaticCapitalizationEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
 		},
-		{
-			"title": "Configured",
-			"type": "boolean",
-			"default": true,
-		"options": {
-			"infoText": "Key: Force Internet Sharing Off"
-			}
-		}
-	]
-	},
-     "MultipleSessionEnabled": {
-            "title": "Disable Fast User Switching",
-            "description": "If false, disables Fast User Switching",
-            "propertyOrder": 40,
-            "anyOf": [
-		{
-			"title": "Not Configured",
-			"type": "null"
+		"NSAutomaticDashSubstitutionEnabled": {
+			"title": "Automatic Dash Substitution",
+			"description": "Use smart dashes. Replace double-dashes with emdash.",
+			"property_order": 10,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+					],
+				"infoText": "Key: NSAutomaticDashSubstitutionEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
 		},
-		{
-			"title": "Configured",
-			"type": "boolean",
-			"default": false,
-		"options": {
-			"infoText": "Key: Disable Fast User Switching"
-			}
+		"NSAutomaticPeriodSubstitutionEnabled": {
+			"title": "Automatic Period Substitution",
+			"description": "Convert double-space to period.",
+			"property_order": 15,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+					],
+				"infoText": "Key: NSAutomaticPeriodSubstitutionEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
+		},
+		"NSAutomaticQuoteSubstitutionEnabled": {
+			"title": "Automatic Quote Substitution",
+			"description": "Use smart quotes. Replace straight quotes with curly quotes.",
+			"property_order": 20,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+				],
+				"infoText": "Key: NSAutomaticQuoteSubstitutionEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
+		},
+		"NSAutomaticSpellingCorrectionEnabled": {
+			"title": "Automatic Spelling Correction",
+			"description": "Correct spelling automatically.",
+			"property_order": 25,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+				],
+				"infoText": "Key: NSAutomaticSpellingCorrectionEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
+		},
+		"NSAutomaticTextCompletionEnabled": {
+			"title": "Automatic Text Completion",
+			"description": "Suggest corrections and replace text automatically.",
+			"property_order": 30,
+			"type": "integer",
+			"options": {
+				"enum_titles": [
+					"On",
+					"Off"
+				],
+				"infoText": "Key: NSAutomaticTextCompletionEnabled"
+			},
+			"enum": [
+				1,
+				0
+			]
+		},
+		"AppleShowAllExtensions": {
+			"title": "Display all filename extensions",
+			"description": "If true, enables display of all filename extensions",
+			"propertyOrder": 35,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: AppleShowAllExtensions"
+					}
+				}
+			]
+		},
+		"com.apple.autologout.AutoLogOutDelay": {
+			"title": "Auto Log Out Delay",
+			"description": "The autologout delay, in seconds. A value of 0 means autologout is off. In some cases, this delay may be restricted to values between 5 minutes and 24 hours.",
+			"type": "intiger",
+			"propertyOrder": 40,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"infoText": "Key: com.apple.autologout.AutoLogOutDelay"
+					}
+				}
+			]
+		},
+		"MultipleSessionEnabled": {
+			"title": "Fast User Switching Permitted",
+			"description": "If false, disables Fast User Switching",
+			"propertyOrder": 45,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: MultipleSessionEnabled"
+					}
+				}
+			]
 		}
-		]
-	}
 	}
 }
