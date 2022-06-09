@@ -1,25 +1,162 @@
 {
-  "title": "Enable FileVault",
-  "description": "Enables FileVault 2 disk encryption.",
-  "__feedback": "shitttyscripts@gmail.com",
-  "__version": "1.1",
-  "__preferencedomain": "com.apple.MCX.FileVault2",
-  "properties": {
-    "Enable": {
-      "title": "Enable FileVault",
-      "description": "Set to true to enable FileVault.",
-      "links": [
-        {
-          "rel": "More information",
-          "href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
-        }
-      ],
-      "type": "boolean",
-      "propertyOrder": 5,
-      "default": "true",
-      "options": {
-        "infoText": "Key: Enable"
-      }
-    }
-  }
+	"title": "FileVault Settings",
+	"description": "FileVault 2 Encryption Settings (com.apple.MCX.FileVault2.plist)",
+	"__version": "2.o",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.MCX.FileVault2",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"Enable": {
+			"title": "Enable FileVault.",
+			"description": "(Required) If true, enables FileVault.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "string",
+			"propertyOrder": 5,
+			"default": "no",
+			"options": {
+				"infoText": "Key: Enable",
+				"enum_titles": [
+					"No",
+					"Yes"
+				]
+			},
+			"enum": [
+				"no",
+				"yes"
+			]
+		},
+		"Defer": {
+			"title": "Defer FileVault Enablement",
+			"description": "If true, defers enabling FileVault until the designated user logs out. For details, see fdesetup(8). The person enabling FileVault must be either a local user or a mobile account user.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 10,
+			"default": "false",
+			"options": {
+				"infoText": "Key: Defer"
+			}
+		},
+		"DeferDontAskAtUserLogout": {
+			"title": "Defer - Don't Ask User at logout",
+			"description": "If true, prevents requests for enabling FileVault at user logout time.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 15,
+			"default": "false",
+			"options": {
+				"infoText": "Key: DeferDontAskAtUserLogout"
+			},
+			"required": ["defer"]
+		},
+		"DeferForceAtUserLoginMaxBypassAttempts": {
+			"title": "Defer - Force At Login After Max Bypass Attempts",
+			"description": "DeferForceAtUserLoginMaxBypassAttempts",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "integer",
+			"propertyOrder": 20,
+			"default": "3",
+			"options": {
+				"infoText": "Key: DeferForceAtUserLoginMaxBypassAttempts"
+			},
+			"required": ["defer"]
+		},
+		"ShowRecoveryKey": {
+			"title": "Show FileVault Recovery Key",
+			"description": "If false, prevents display of the personal recovery key to the user after FileVault is enabled.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 25,
+			"default": "true",
+			"options": {
+				"infoText": "Key: ShowRecoveryKey"
+			}
+		},
+		"UseKeychain": {
+			"title": "Escrow institutional recovery key in FileVaultMaster.keychain",
+			"description": "If true and no certificate information is provided in this payload, the keychain created at /Library/Keychains/FileVaultMaster.keychain is used when the institutional recovery key is added.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 30,
+			"default": "false",
+			"options": {
+				"infoText": "Key: UseKeychain"
+			}
+		},
+		"UseRecoveryKey": {
+			"title": "Use Personal Recovery Key",
+			"description": "If true, creates a personal recovery key and displays it to the user.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 35,
+			"default": "false",
+			"options": {
+				"infoText": "Key: UseRecoveryKey"
+			}
+		},
+		"UserEntersMissingInfo": {
+			"title": "Use Personal Recovery Key",
+			"description": "If true, enables a prompt for missing user name or password fields.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "boolean",
+			"propertyOrder": 40,
+			"default": "false",
+			"options": {
+				"infoText": "Key: UserEntersMissingInfo"
+			}
+		},
+		"Certificate": {
+			"title": "Certificate",
+			"description": "The DER-encoded certificate data if UseRecoveryKey is enabled.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "string",
+			"propertyOrder": 45,
+			"options": {
+				"infoText": "Key: Certificate"
+			}
+		},
+		"PayloadCertificateUUID": {
+			"title": "PayloadCertificateUUID",
+			"description": "The UUID of the payload within the same profile containing the asymmetric recovery key certificate payload.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/fdefilevault"
+			}],
+			"type": "string",
+			"propertyOrder": 50,
+			"options": {
+				"infoText": "Key: PayloadCertificateUUID"
+			}
+		}
+	},
+"required": ["Enable"]
 }
