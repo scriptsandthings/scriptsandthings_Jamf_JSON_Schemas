@@ -1,0 +1,19 @@
+{
+  "title": "Enable Gatekeeper",
+  "description": "Preference Domain: com.apple.systempolicy.control - Gatekeeper is Apple’s application white-listing control that restricts downloaded applications from launching. It functions as a control to limit applications from unverified sources from running without authorization.",
+  "__version": "1.0",
+  "__feedback": "shitttyscripts@gmail.com",
+  "__preferencedomain": "com.apple.systempolicy.control",
+  "properties": {
+    "EnableAssessment": {
+      "title": "Enable Gatekeeper Assessment",
+      "description": "If true, enables Assessment of files and binaries on the system using Apple's Gatekeeper anti-malware utility.",
+      "type": "boolean",
+      "propertyOrder": 5,
+      "default": "true",
+      "options": {
+        "infoText": "Key: EnableAssessment"
+      }
+    }
+  }
+}
