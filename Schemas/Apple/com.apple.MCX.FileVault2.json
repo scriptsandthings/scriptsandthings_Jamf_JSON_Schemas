@@ -1,7 +1,7 @@
 {
 	"title": "FileVault Settings",
-	"description": "FileVault 2 Encryption Settings (com.apple.MCX.FileVault2.plist)",
-	"__version": "2.o",
+	"description": "FileVault 2 Encryption Settings (com.apple.MCX.FileVault2)",
+	"__version": "2.1",
 	"__feedback": "shitttyscripts@gmail.com",
 	"__preferencedomain": "com.apple.MCX.FileVault2",
 	"type": "object",
