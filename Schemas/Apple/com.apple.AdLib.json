@@ -1,0 +1,32 @@
+{
+	"title": "Disable Tracking for Personalized Advertising",
+	"description": "Disables the collection and submission of telemetry and usage data to Apple which could be used to provide a more personally targeted advertising experience on your mac",
+	"__version": "1.1",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.AdLib",
+	"options": {
+		"remove_empty_properties": "true"
+	},
+	"properties": {
+		"allowApplePersonalizedAdvertising": {
+			"title": "Allow Apple Personalized Advertising",
+			"description": "If false, disables the collection and submission of personal and system stats to be used for targeted advertisement presentations",
+			"type": "boolean",
+			"propertyOrder": 5,
+			"default": "false",
+			"options": {
+				"infoText": "Key: allowApplePersonalizedAdvertising"
+			}
+		},
+		"forceLimitAdTracking": {
+			"title": "Limit ad tracking",
+			"description": "If true, limits the collection and submission of personal and system stats to be used for targeted advertisement presentations",
+			"type": "boolean",
+			"propertyOrder": 5,
+			"default": "true",
+			"options": {
+				"infoText": "Key: forceLimitAdTracking"
+			}
+		}
+	}
+}
