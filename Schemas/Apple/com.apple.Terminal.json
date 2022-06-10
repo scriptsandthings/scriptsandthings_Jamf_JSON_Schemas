@@ -1,0 +1,25 @@
+{
+	"title": "Terminal.app",
+	"description": "Enable Secure Keyboard Entry in Terminal.app. Enabling Secure Keyboard Entry minimizes the risk of a key logger from detecting what is entered in Terminal",
+	"__preferencedomain": "com.apple.Terminal",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__version": "1.0",
+	"properties": {
+		"SecureKeyboardEntry": {
+			"title": "Enable Secure Keyboard Entry in Terminal.app",
+			"description": "Set to true to enable Secure Keyboard Entry. Secure Keyboard Entry prevents other applications on the system and/or network from detecting and recording what is typed into Terminal.",
+			"type": "boolean",
+			"propertyOrder": 5,
+			"default": "false",
+			"options": {
+				"infoText": "Key: SecureKeyboardEntry"
+			},
+			"links": [
+        {
+          "rel": "More information",
+          "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:c4b83a05e1bc54f536fc191bb78e58e7"
+        }
+			]
+		}
+	}
+}
