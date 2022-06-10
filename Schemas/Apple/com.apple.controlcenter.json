@@ -22,6 +22,12 @@
           "title": "Configured",
           "type": "boolean",
           "default": true,
+           "links": [
+				{
+					"rel": "More information",
+					"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:9db67f65c4dfa54414ed5f63e82d5923"
+				}
+			],
           "options": {
             "infoText": "Key: AirplayRecieverEnabled"
           }
