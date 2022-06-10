@@ -1,0 +1,25 @@
+{
+	"title": "AFP server and guest login settings (com.apple.AppleFileServer)",
+	"description": "Guest Access to AFP Shared Folders. Turning off guest access prevents anonymous users from accessing files shared via AFP.",
+	"__preferencedomain": "com.apple.AppleFileServer",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__version": "1.0",
+	"properties": {
+		"guestAccess": {
+			"title": "Allow guests to connect to shared folders via AFP",
+			"description": "Set to false to disable guest access via AFP. Not allowing guests to connect to shared folders mitigates the risk of an untrusted user doing basic reconnaissance and possibly use privilege escalation attacks to take control of the system.",
+			"propertyOrder": 5,
+			"type": "boolean",
+			"default": "false",
+			"options": {
+				"infoText": "Key: guestAccess"
+			},
+			"links": [
+    		    {
+     		     "rel": "More information",
+     		     "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_11_v1.2.0_L1.audit:de8449300d465986d2148df276a531b5"
+   			     }
+			]
+		}
+	}
+}
