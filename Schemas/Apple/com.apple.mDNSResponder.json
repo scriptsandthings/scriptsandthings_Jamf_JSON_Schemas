@@ -1,0 +1,25 @@
+{
+	"title": "Bonjour Advertising Services (com.apple.mDNSResponder)",
+	"description": "Control Bonjour Advertising Services settings. Bonjour is an auto-discovery mechanism for TCP/IP devices which enumerate devices and services within a local subnet. DNS on macOS is integrated with Bonjour and should not be turned off, but the Bonjour advertising service can be disabled.",
+	"__preferencedomain": "com.apple.mDNSResponder",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__version": "1.0",
+	"properties": {
+		"NoMulticastAdvertisements": {
+			"title": "Disable Bonjour Advertising Services (Multicast Advertisements)",
+			"description": "Set to true to disable Bonjour Advertising Services. Bonjour can simplify device discovery from an internal rogue or compromised host. An attacker could use Bonjour's multicast DNS feature to discover a vulnerable or poorly-configured service or additional information to aid a targeted attack. Implementing this control disables the continuous broadcasting of 'I'm here!' messages.",
+			"propertyOrder": 5,
+			"type": "boolean",
+			"default": "false",
+			"options": {
+				"infoText": "Key: NoMulticastAdvertisements"
+			},
+			"links": [
+    		    {
+     		     "rel": "More information",
+     		     "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L2.audit:eb256f08459f55e289d3eeff676538b5"
+   			     }
+			]
+		}
+	}
+}
