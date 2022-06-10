@@ -1,6 +1,8 @@
 {
   "title": "PaloAlto GlobalProtect Server Settings (com.paloaltonetworks.GlobalProtect.client)",
   "description": "Configures PaloAlto GlobalProtect Server Addresses",
+  "__feedback": "shitttyscripts@gmail.com",
+  "__version": "1.0",
   "properties": {
     "PanPortalList": {
       "title": "GlobalProtect Gateway Addresses",
