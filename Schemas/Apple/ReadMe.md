@@ -1,6 +1,6 @@
 # Apple JSON Schemas
 ## CIS Security Benchmarks 
-### Level 1 and Level 2
+### CIS Level 1 and Level 2
 
 These JSON schemas were originally created with the goal of simplifying the enforcement of CIS benchmarks level 1 and level 2.
 
