@@ -1,7 +1,7 @@
 {
   "title": "com.apple.controlcenter",
   "description": "ControlCenter settings for displaying the Bluetooth and WiFi menu bar items. Enable/Disable AirPlay Reciever ability",
-  "__version": "1.5",
+  "__version": "1.6",
   "__feedback": "shitttyscripts@gmail.com",
   "__preferencedomain": "com.apple.controlcenter",
   "type": "object",
