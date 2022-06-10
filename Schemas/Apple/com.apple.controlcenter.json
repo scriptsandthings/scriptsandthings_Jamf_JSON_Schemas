@@ -31,8 +31,18 @@
     "Bluetooth": {
       "title": "Display Bluetooth Status in Menu Bar",
       "type": "integer",
+        "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        18,
+        24
+      ],
       "propertyOrder": 15,
-      "description": "macOS 12 or Later. If set to 18 will set the Bluetooth status to display in the Menu Bar. If set to 24 will remove the Bluetooth status from the Menu Bar",
+      "description": "macOS 12 or Later. If set to on will set the Bluetooth status to display in the Menu Bar. If set to off will remove the Bluetooth status from the Menu Bar",
       "links": [
         {
           "rel": "More information",
@@ -43,8 +53,18 @@
     "WiFi": {
       "title": "Display WiFi Status in Menu Bar",
       "type": "integer",
-      "propertyOrder": 15,
-      "description": "macOS 12 or Later. If set to 18 will set the WiFi status to display in the Menu Bar. If set to 24 will remove the Bluetooth status from the Menu Bar",
+        "options": {
+        "enum_titles": [
+          "On",
+          "Off"
+        ]
+      },
+      "enum": [
+        18,
+        24
+      ],
+      "propertyOrder": 20,
+      "description": "macOS 12 or Later. If set to on will set the WiFi status to display in the Menu Bar. If set to off will remove the Bluetooth status from the Menu Bar",
       "links": [
         {
           "rel": "More information",
