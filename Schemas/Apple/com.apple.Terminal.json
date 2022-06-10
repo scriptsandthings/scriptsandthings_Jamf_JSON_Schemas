@@ -13,12 +13,12 @@
 			"default": "false",
 			"options": {
 				"infoText": "Key: SecureKeyboardEntry"
-			},
+				},
 			"links": [
-        {
-          "rel": "More information",
-          "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:c4b83a05e1bc54f536fc191bb78e58e7"
-        }
+				{
+					"rel": "More information",
+					"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:c4b83a05e1bc54f536fc191bb78e58e7"
+				}
 			]
 		}
 	}
