@@ -1,7 +1,7 @@
 {
   "title": "Disable Bluetooth",
   "description": "Turn off Bluetooth, if no paired devices exist",
-  "__version": "1.0",
+  "__version": "1.1",
   "__feedback": "shitttyscripts@gmail.com",
   "__preferencedomain": "com.apple.MCXBluetooth",
   "options": {
@@ -22,7 +22,7 @@
 					"type": "boolean",
 					"default": true,
 					"options": {
-						"infoText": "Key: Bluetooth"
+						"infoText": "Key: DisableBluetooth"
 					}
 				}
 			]
