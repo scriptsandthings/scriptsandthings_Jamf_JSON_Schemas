@@ -1,0 +1,25 @@
+{
+  "title": "SMB server and guest login settings (com.apple.smb.server)",
+  "description": "Guest Access to Shared Folders. Turning off guest access prevents anonymous users from accessing files shared via SMB.",
+  "__preferencedomain": "com.apple.smb.server",
+  "__feedback": "shitttyscripts@gmail.com",
+  "__version": "1.1",
+  "properties": {
+    "AllowGuestAccess": {
+      "title": "Allow guest access",
+      "description": "Set to false to disable guest access. Not allowing guests to connect to shared folders mitigates the risk of an untrusted user doing basic reconnaissance and possibly use privilege escalation attacks to take control of the system.",
+      "type": "boolean",
+      "propertyOrder": 5,
+      "default": "false",
+      "options": {
+        "infoText": "Key: AllowGuestAccess"
+      },
+      "links": [
+        {
+          "rel": "More information",
+          "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_11_v1.2.0_L1.audit:de8449300d465986d2148df276a531b5"
+        }
+      ]
+    }
+  }
+}
