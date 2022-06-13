@@ -1,0 +1,144 @@
+{
+	"title": "com.apple.SoftwareUpdate",
+	"description": "Preference Domain: com.apple.SoftwareUpdate,  Application: Apple Software Update",
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"AutomaticCheckEnabled": {
+			"title": "Enable auto-check for available updates",
+			"description": "Auto Update verifies that your system has the newest security patches and software updates. If 'Automatically check for updates' is not selected background updates for new malware definition files from Apple for XProtect and Gatekeeper will not occur.",
+			"propertyOrder": 5,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: AutomaticCheckEnabled"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:62922a77d473cb0ef888cec6a4d0f1d9"
+					}]
+				}
+			]
+		},
+		"AutomaticDownload": {
+			"title": "Enable automtic download of new updates when available",
+			"description": "In the GUI both 'Install macOS updates' and 'Install app updates from the App Store' are dependent on whether 'Download new updates when available' is selected.",
+			"propertyOrder": 10,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: AutomaticDownload"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:bca3f6dd97b43d02897f5ef98102f770"
+					}]
+				}
+			]
+		},
+		"AutomaticallyInstallAppUpdates": {
+			"title": "Enable automatic download and installation of App Updates",
+			"propertyOrder": 15,
+			"description": "Ensure that application updates are installed after they are available from Apple (App Store). These updates do not require reboots or admin privileges for end users.",
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: AutomaticallyInstallAppUpdates"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:55e8759872dce781b8dbc5a3f42e23b9"
+					}]
+				}
+			]
+		},
+		"AutomaticallyInstallMacOSUpdates": {
+			"title": "Automatically download and install macOS Updates",
+			"description": "Ensure that macOS updates are installed after they are available from Apple. This setting enables macOS updates to be automatically installed. Some environments will want to approve and test updates before they are delivered. It is best practice to test first where updates can and have caused disruptions to operations. Automatic updates should be turned off where changes are tightly controlled and there are mature testing and approval processes. Automatic updates should not be turned off so the admin can call the users first to let them know it's ok to install. A dependable, repeatable process involving a patch agent or remote management tool should be in place before auto-updates are turned off.",
+			"propertyOrder": 20,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: AutomaticallyInstallMacOSUpdates"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:f44fde2c3db23a49db425da9db79521b"
+					}]
+				}
+			]
+		},
+		"ConfigDataInstall": {
+			"title": "Automatically download and install System Data File Updates",
+			"description": "Ensure System Data Files are automatically downloaded and installed after they are available from Apple. This setting enables definition updates for XProtect and Gatekeeper. With this setting in place new malware and adware that Apple has added to the list of malware or untrusted software will not execute. These updates do not require reboots or end user admin rights.",
+			"propertyOrder": 25,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: ConfigDataInstall"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:5ba2e84aa1f3d28dcce848f83380e996"
+					}]
+				}
+			]
+		},
+		"CriticalUpdateInstall": {
+			"title": "Automatically download and install Security Updates",
+			"description": "Ensure Security Updates are automatically downloaded and installed after they are available from Apple. This setting enables definition updates for XProtect and Gatekeeper. With this setting in place new malware and adware that Apple has added to the list of malware or untrusted software will not execute. These updates do not require reboots or end user admin rights.",
+			"propertyOrder": 30,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: CriticalUpdateInstall"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L1.audit:5ba2e84aa1f3d28dcce848f83380e996"
+					}]
+				}
+			]
+		}
+	}
+}
