@@ -1,7 +1,7 @@
 {
-	"title": "Disable Tracking for Personalized Advertising",
-	"description": "Disables the collection and submission of telemetry and usage data to Apple which could be used to provide a more personally targeted advertising experience on your mac",
-	"__version": "1.1",
+	"title": "Disable Tracking for Personalized Advertising (com.apple.AdLib)",
+	"description": "Enable/disable Stocks. Disables the collection and submission of telemetry and usage data to Apple which could be used to provide a more personally targeted advertising experience on your mac",
+	"__version": "2.0",
 	"__feedback": "shitttyscripts@gmail.com",
 	"__preferencedomain": "com.apple.AdLib",
 	"options": {
@@ -12,21 +12,138 @@
 			"title": "Allow Apple Personalized Advertising",
 			"description": "If false, disables the collection and submission of personal and system stats to be used for targeted advertisement presentations",
 			"type": "boolean",
+			"default": false,
 			"propertyOrder": 5,
-			"default": "false",
-			"options": {
-				"infoText": "Key: allowApplePersonalizedAdvertising"
-			}
+			"anyOf": [{
+				"title": "Not Configured",
+				"type": "null"
+					},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: allowApplePersonalizedAdvertising",
+						"enum_titles": [
+							"Personalized Advertising - Allowed",
+							"Personalized Advertising - Disabled"							]
+						},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
 		},
 		"forceLimitAdTracking": {
 			"title": "Limit ad tracking",
 			"description": "If true, limits the collection and submission of personal and system stats to be used for targeted advertisement presentations",
 			"type": "boolean",
-			"propertyOrder": 5,
-			"default": "true",
-			"options": {
-				"infoText": "Key: forceLimitAdTracking"
-			}
+			"default": true,
+			"propertyOrder": 10,
+			"anyOf": [{
+				"title": "Not Configured",
+				"type": "null"
+					},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: forceLimitAdTracking",
+						"enum_titles": [
+							"Ad Tracking Limited/Disabled",
+							"Ad Tracking Allowed"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
+		},
+		"allowIdentifierForAdvertising": {
+			"title": "Allow Identifier For Advertising",
+			"description": "Enables or disables the use of a personal identifier to be used for targeted advertisement presentations",
+			"type": "boolean",
+			"default": false,
+			"propertyOrder": 15,
+			"anyOf": [{
+				"title": "Not Configured",
+				"type": "null"
+					},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: allowIdentifierForAdvertising",
+						"enum_titles": [
+							"Identifier for Advertising - Allowed",
+							"Identifier Advertising - Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
+		},
+		"StocksEnabled": {
+			"title": "Stocks",
+			"description": "Enables or disables Stocks.",
+			"type": "boolean",
+			"default": true,
+			"propertyOrder": 20,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: StocksEnabled",
+						"enum_titles": [
+							"Enabled",
+							"Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
+		},
+		"personalizedAdsMigrated": {
+			"title": "Personal Ads Migrated",
+			"type": "integer",
+			"default": 0,
+			"propertyOrder": 25,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"options": {
+						"infoText": "Key: personalizedAdsMigrated",
+						"enum_titles": [
+							"False - 0",
+							"True - 1"
+						]
+					},
+					"enum": [
+						0,
+						1
+					]
+				}
+			]
 		}
-	}
+	},
+	"required": [
+		"forceLimitAdTracking",
+		"allowApplePersonalizedAdvertising",
+		"allowIdentifierForAdvertising"
+	]
 }
