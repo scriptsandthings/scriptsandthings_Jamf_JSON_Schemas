@@ -1,0 +1,102 @@
+{
+	"title": "com.apple.preferences.sharing.SharingPrefsExtension",
+	"description": "Preference Domain: com.apple.preferences.sharing.SharingPrefsExtension,  Application: Media Sharing",
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"homeSharingUIStatus": {
+			"title": "Enable or disable the home sharing sharing UI",
+			"description": "Starting with macOS 10.15 Apple has provided a control to allow a user to share Apple downloaded content on all Apple devices that are signed in with the same Apple ID. This allows a user to share downloaded Movies, Music or TV shows with other controlled macOS, iOS and iPadOS devices as well as photos with Apple TVs. With this capability guest users can also use media downloaded on the computer. The recommended best practice is not to use the computer as a server but to utilize Apple's cloud storage to download and use content stored there if content stored with Apple is used on multiple devices. Media Sharing allows for pre-downloaded content on a Mac to be available to other Apple devices on the same network. Leaving this disabled forces device users to stream or download content from each Apple authorized device. This sharing could even allow unauthorized devices on the same network media access.",
+			"propertyOrder": 5,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 0,
+					"options": {
+						"infoText": "Key: homeSharingUIStatus",
+						"enum_titles": [
+							"Disabled",
+							"Enabled"
+						]
+					},
+					"enum": [
+						0,
+						1
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L2.audit:55ba5303bab166a1a98f2b5ffd897456"
+					}]
+				}
+			]
+		},
+		"legacySharingUIStatus": {
+			"title": "Enable or disable the legcy sharing UI",
+			"description": "Starting with macOS 10.15 Apple has provided a control to allow a user to share Apple downloaded content on all Apple devices that are signed in with the same Apple ID. This allows a user to share downloaded Movies, Music or TV shows with other controlled macOS, iOS and iPadOS devices as well as photos with Apple TVs. With this capability guest users can also use media downloaded on the computer. The recommended best practice is not to use the computer as a server but to utilize Apple's cloud storage to download and use content stored there if content stored with Apple is used on multiple devices. Media Sharing allows for pre-downloaded content on a Mac to be available to other Apple devices on the same network. Leaving this disabled forces device users to stream or download content from each Apple authorized device. This sharing could even allow unauthorized devices on the same network media access.",
+			"propertyOrder": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 0,
+					"options": {
+						"infoText": "Key: legacySharingUIStatus",
+						"enum_titles": [
+							"Disabled",
+							"Enabled"
+						]
+					},
+					"enum": [
+						0,
+						1
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L2.audit:55ba5303bab166a1a98f2b5ffd897456"
+					}]
+				}
+			]
+		},
+		"mediaSharingUIStatus": {
+			"title": "Enable or disable the media sharing UI",
+			"description": "Starting with macOS 10.15 Apple has provided a control to allow a user to share Apple downloaded content on all Apple devices that are signed in with the same Apple ID. This allows a user to share downloaded Movies, Music or TV shows with other controlled macOS, iOS and iPadOS devices as well as photos with Apple TVs. With this capability guest users can also use media downloaded on the computer. The recommended best practice is not to use the computer as a server but to utilize Apple's cloud storage to download and use content stored there if content stored with Apple is used on multiple devices. Media Sharing allows for pre-downloaded content on a Mac to be available to other Apple devices on the same network. Leaving this disabled forces device users to stream or download content from each Apple authorized device. This sharing could even allow unauthorized devices on the same network media access.",
+			"propertyOrder": 15,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 0,
+					"options": {
+						"infoText": "Key: mediaSharingUIStatus",
+						"enum_titles": [
+							"Disabled",
+							"Enabled"
+						]
+					},
+					"enum": [
+						0,
+						1
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v1.0.0_L2.audit:55ba5303bab166a1a98f2b5ffd897456"
+					}]
+				}
+			]
+		}
+	}
+}
