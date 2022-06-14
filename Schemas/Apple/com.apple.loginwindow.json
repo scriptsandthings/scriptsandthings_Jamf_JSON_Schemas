@@ -1,0 +1,131 @@
+{
+  "title": "macOS Login Window / FileVault Login Settings (com.apple.loginwindow)",
+  "description": "Configure macOS login window settings and FileVault>macOS login window passthrough authentication",
+  "__version": "2.0",
+  "__feedback": "shitttyscripts@gmail.com",
+  "__preferencedomain": "com.apple.loginwindow",
+  "options": {
+    "remove_empty_properties": "true"
+  },
+  "properties": {
+    "DisableFDEAutoLogin": {
+      "title": "Disable or enable FileVault auto-login/password passthrough",
+      "description": "If disabled, the user will be presented with the macOS login screen after authenticating FileVault. If enabled, the macOS login screen will not be shown after FileVault authentication and the system will load directly to the user's desktop.",
+      "type": "boolean",
+      "default": true,
+      "propertyOrder": 5,
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "options": {
+            "infoText": "Key: DisableFDEAutoLogin",
+            "enum_titles": [
+              "FileVault auto-login - Disabled",
+              "FileVault auto-login - Enabled"
+            ]
+          },
+          "enum": [
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    "LoginwindowText": {
+      "title": "Login Window Text",
+      "description": "Set a banner to be displayed on the macOS login screen.",
+      "type": "string",
+      "default": 0,
+      "propertyOrder": 10,
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "type": "string",
+          "options": {
+            "infoText": "Key: LoginwindowText"
+          }
+        }
+      ]
+    },
+    "RetriesUntilHint": {
+      "title": "Password Retries Before Hint",
+      "description": "Set the number of bad password attempts allowed before user's password hint is displayed.",
+      "type": "integer",
+      "default": 0,
+      "propertyOrder": 15,
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "options": {
+            "infoText": "Key: RetriesUntilHint",
+            "enum_titles": [
+              "Password hint disabled/hint will not be shown",
+              "1 password attempts before hint",
+              "2 password attempts before hint",
+              "3 password attempts before hint",
+              "4 password attempts before hint",
+              "5 password attempts before hint",
+              "6 password attempts before hint",
+              "7 password attempts before hint",
+              "8 password attempts before hint",
+              "9 password attempts before hint",
+              "10 password attempts before hint"
+            ]
+          },
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    "SHOWFULLNAME": {
+      "title": "Show Full Name",
+      "description": "Display macOS login screen as username and password fields.",
+      "type": "boolean",
+      "default": true,
+      "propertyOrder": 20,
+      "anyOf": [
+        {
+          "title": "Not Configured",
+          "type": "null"
+        },
+        {
+          "title": "Configured",
+          "options": {
+            "infoText": "Key: SHOWFULLNAME",
+            "enum_titles": [
+              "Enabled",
+              "Disabled"
+            ]
+          },
+          "enum": [
+            true,
+            false
+          ]
+        }
+      ]
+    }
+  }
+}
