@@ -1,6 +1,6 @@
 # Apple JSON Schemas
-## CIS Security Benchmarks Level 1 and Level 2
-### For macOS Monterey 2022
+## CIS 2022 Security Benchmarks - Level 1 and Level 2
+### For macOS Monterey
 
 These JSON schemas were originally created with the goal of simplifying the enforcement of CIS benchmarks level 1 and level 2 for macOS Monterey and Big Sur.
 
