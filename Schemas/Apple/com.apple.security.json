@@ -1,0 +1,102 @@
+{
+	"title": "com.apple.security",
+	"description": "Preference Domain: com.apple.security,  Application: macOS Security Preferences",
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"dontAllowFireWallUI": {
+			"title": "Enable or disable the macOS Firewall UI",
+			"description": "If true, disables user changes to the firewall settings.",
+			"propertyOrder": 5,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: dontAllowFireWallUI",
+						"enum_titles": [
+							"false - macOS Lock Firewall UI Enabled - Default",
+							"true - macOS Lock Firewall UI Disabled"
+						]
+					},
+					"enum": [
+						false,
+						true
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/securitypreferences"
+					}]
+				}
+			]
+		},
+		"dontAllowLockMessageUI": {
+			"title": "Enable or disable the macOS Lock Message UI",
+			"description": "If true, disables user changes to the lock message. ",
+			"propertyOrder": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: dontAllowLockMessageUI",
+						"enum_titles": [
+							"false - macOS Lock Message UI Enabled - Default",
+							"true - macOS Lock Message UI Disabled"
+						]
+					},
+					"enum": [
+						false,
+						true
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/securitypreferences"
+					}]
+				}
+			]
+		},
+		"dontAllowPasswordResetUI": {
+			"title": "Enable or disable the macOS Password Reset UI",
+			"description": "If true, disables user changes to the password. ",
+			"propertyOrder": 15,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: dontAllowPasswordResetUI",
+						"enum_titles": [
+							"false - Password Reset UI Enabled - Default",
+							"true - Password Reset UI Disabled"
+						]
+					},
+					"enum": [
+						false,
+						true
+					],
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/securitypreferences"
+					}]
+				}
+			]
+		}
+	}
+}
