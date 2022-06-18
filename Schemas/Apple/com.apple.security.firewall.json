@@ -1,9 +1,9 @@
 {
 	"title": "macOS Firewall (com.apple.security.firewall)",
-	"description": "macOS Firewall settings. Bonjour is an auto-discovery mechanism for TCP/IP devices which enumerate devices and services within a local subnet. DNS on macOS is integrated with Bonjour and should not be turned off, but the Bonjour advertising service can be disabled.",
+	"description": "Preference Domain: com.apple.security.firewall - Application: macOS Firewall settings.",
 	"__preferencedomain": "com.apple.security.firewall",
 	"__feedback": "shitttyscripts@gmail.com",
-	"__version": "1.0",
+	"__version": "1.1",
 	"properties": {
 		"EnableFirewall": {
 			"title": "Enable macOS Firewall",
