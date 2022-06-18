@@ -2,114 +2,182 @@
 	"title": "macOS Fast User Switching, Show Filename Extensions, and Automatic Text Corrections (.GlobalPreferences)",
 	"description": "Preference settings for system-wide automatic text replacements: Correct spelling automatically, Capitalize words automatically, Add period with double-space, Touch Bar typing suggestions and Use smart quotes and dashes. Corresponds to System Preferences > Keyboard > Text tab. As well as preferences to disable Fast User Switching and to ensure that all file extensions are displayed.",
 	"__feedback": "shitttyscripts@gmail.com",
-	"__version": "1.5",
+	"__version": "1.6",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"definitions": {
+		"policy_group": {
+			"type": "object",
+			"format": "grid",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			}
+		}
+	},
 	"properties": {
 		"NSAutomaticCapitalizationEnabled": {
 			"title": "Automatic Capitalization",
 			"description": "Capitalize words automatically.",
 			"property_order": 5,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-					],
-				"infoText": "Key: NSAutomaticCapitalizationEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Capitalization Enabled",
+							"2 - Automatic Capitalization Disabled"
+						],
+						"infoText": "Key: NSAutomaticCapitalizationEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"NSAutomaticDashSubstitutionEnabled": {
 			"title": "Automatic Dash Substitution",
 			"description": "Use smart dashes. Replace double-dashes with emdash.",
 			"property_order": 10,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-					],
-				"infoText": "Key: NSAutomaticDashSubstitutionEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Dash Substitution/Smart dashes Enabled. Replace double-dashes with emdash.",
+							"2 - Automatic Dash Substitution/Smart dashes Disabled. Don't replace double-dashes with emdash."
+						],
+						"infoText": "Key: NSAutomaticDashSubstitutionEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"NSAutomaticPeriodSubstitutionEnabled": {
 			"title": "Automatic Period Substitution",
 			"description": "Convert double-space to period.",
 			"property_order": 15,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-					],
-				"infoText": "Key: NSAutomaticPeriodSubstitutionEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Period Substitution Enabled. Convert double-space to period.",
+							"2 - Automatic Period Substitution Disabled. Don't convert double-space to period."
+						],
+						"infoText": "Key: NSAutomaticPeriodSubstitutionEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"NSAutomaticQuoteSubstitutionEnabled": {
 			"title": "Automatic Quote Substitution",
 			"description": "Use smart quotes. Replace straight quotes with curly quotes.",
 			"property_order": 20,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-				],
-				"infoText": "Key: NSAutomaticQuoteSubstitutionEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Quote Substitution Enabled. Replace straight quotes with curly quotes.",
+							"2 - Automatic Quote Substitution Disabled. Don't Replace straight quotes with curly quotes."
+						],
+						"infoText": "Key: NSAutomaticQuoteSubstitutionEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"NSAutomaticSpellingCorrectionEnabled": {
 			"title": "Automatic Spelling Correction",
 			"description": "Correct spelling automatically.",
 			"property_order": 25,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-				],
-				"infoText": "Key: NSAutomaticSpellingCorrectionEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Spelling Correction Enabled. Correct spelling automatically.",
+							"2 - Automatic Spelling Correction Disabled. Don't correct spelling automatically."
+						],
+						"infoText": "Key: NSAutomaticSpellingCorrectionEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"NSAutomaticTextCompletionEnabled": {
 			"title": "Automatic Text Completion",
 			"description": "Suggest corrections and replace text automatically.",
 			"property_order": 30,
-			"type": "integer",
-			"options": {
-				"enum_titles": [
-					"On",
-					"Off"
-				],
-				"infoText": "Key: NSAutomaticTextCompletionEnabled"
-			},
-			"enum": [
-				1,
-				0
+			"default": 2,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": [
+							"1 - Automatic Text Completion Enabled. Suggest corrections and replace text automatically.",
+							"2 - Automatic Text Completion Disabled. Don't suggest corrections and replace text automatically.."
+						],
+						"infoText": "Key: NSAutomaticTextCompletionEnabled"
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
 			]
 		},
 		"AppleShowAllExtensions": {
 			"title": "Display all filename extensions",
-			"description": "If true, enables display of all filename extensions",
+			"description": "If true, enables display of all filename extensions - CIS Benchmark Compliant: true",
 			"propertyOrder": 35,
+			"default": false,
 			"anyOf": [{
 					"title": "Not Configured",
 					"type": "null"
@@ -117,10 +185,18 @@
 				{
 					"title": "Configured",
 					"type": "boolean",
-					"default": true,
+					"default": false,
 					"options": {
+						"enum_titles": [
+							"true - Display all filename extensions enabled. Enables display of all filename extensions - CIS Benchmark Compliant",
+							"false - Display all filename extensions disabled. Don't enable display of all filename extensions"
+						],
 						"infoText": "Key: AppleShowAllExtensions"
-					}
+					},
+					"enum": [
+						true,
+						false
+					]
 				}
 			]
 		},
@@ -144,8 +220,9 @@
 		},
 		"MultipleSessionEnabled": {
 			"title": "Fast User Switching Permitted",
-			"description": "If false, disables Fast User Switching",
+			"description": "If false, disables Fast User Switching - CIS Benchmark Compliant: false",
 			"propertyOrder": 45,
+			"default": false,
 			"anyOf": [{
 					"title": "Not Configured",
 					"type": "null"
@@ -153,10 +230,17 @@
 				{
 					"title": "Configured",
 					"type": "boolean",
-					"default": false,
 					"options": {
-						"infoText": "Key: MultipleSessionEnabled"
-					}
+						"enum_titles": [
+							"true - Fast User Switching Permitted.",
+							"false - Fast User Switching Disabled. - CIS Benchmark Compliant"
+						],
+						"infoText": "Key: AppleShowAllExtensions"
+					},
+					"enum": [
+						true,
+						false
+					]
 				}
 			]
 		}
