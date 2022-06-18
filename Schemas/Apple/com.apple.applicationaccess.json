@@ -1,0 +1,679 @@
+{
+	"title": "Application Access Settings (com.apple.applicationaccess)",
+	"description": "Application access and iCloud sync settings.",
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.applicationaccess",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"definitions": {
+		"policy_group": {
+			"type": "object",
+			"format": "grid",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			}
+		}
+	},
+	"properties": {
+		"allowEraseContentAndSettings": {
+			"title": "Allow Erase All Content And Settings",
+			"description": "Supervised Only. macOS 12 or Later. If set to false, restricts ability to Erase All Content And Settings. - Default: true",
+			"default": true,
+			"propertyOrder": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowEraseContentAndSettings",
+						"enum_titles": [
+							"true - Allow Erase All Content and Settings - Default",
+							"false - Disable Erase All Content and Settings"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+						"links": [{
+							"rel": "More information",
+							"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+						}]
+				}
+			]
+		},
+		"allowCloudPrivateRelay": {
+			"title": "Allow iCloud Private Relay",
+			"description": "macOS 12 or Later. If set to false, restricts enabling iCloud Private Relay. - Default: true",
+			"default": true,
+			"propertyOrder": 15,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudPrivateRelay",
+						"enum_titles": [
+							"true - Allow iCloud Private Relay - Default",
+							"false - Disable iCloud Private Relay"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowPasswordProximityRequests": {
+			"title": "Allow Password Proximity Requests",
+			"description": "macOS 10.14 or Later. If set to false, disables Password Proximity Requests. - Default: true",
+			"default": true,
+			"propertyOrder": 20,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowPasswordProximityRequests",
+						"enum_titles": [
+							"true - Allow Password Proximity Requests - Default",
+							"false - Disable Password Proximity Requests"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowPasswordAutoFill": {
+			"title": "Allow Password Auto Fill",
+			"description": "Supervised Only. macOS 10.14 and later. If false, disables the AutoFill Passwords feature - Default: true",
+			"default": true,
+			"propertyOrder": 25,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowPasswordAutoFill",
+						"enum_titles": [
+							"true - Allow Password Auto Fill - Default",
+							"false - Disable Password Auto Fill"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowPasswordSharing": {
+			"title": "Allow Password Sharing",
+			"description": "Supervised Only. macOS 10.14 and later. If false, disables requesting passwords from nearby devices. - Default: true",
+			"default": true,
+			"propertyOrder": 30,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowPasswordSharing",
+						"enum_titles": [
+							"true - Allow Password Sharing - Default",
+							"false - Disable Password Sharing"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowAirDrop": {
+			"title": "Allow AirDrop",
+			"description": "Enable/Disable ability to use AirDrop - Default: true",
+			"default": true,
+			"propertyOrder": 35,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowAirDrop",
+						"enum_titles": [
+							"true - Allow AirDrop - Default",
+							"false - Disable AirDrop"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudPhotoLibrary": {
+			"title": "Allow iCloud Photo Library",
+			"description": "macOS 10.12 and later. If false, disables iCloud Photo Library. Any photos not fully downloaded from iCloud Photo Library to the device are removed from local storage. - Default: true",
+			"default": true,
+			"propertyOrder": 40,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowDiagnosticSubmission",
+						"enum_titles": [
+							"true - Allow Cloud/iPhoto Photo Libraries - Default",
+							"false - Disable iCloud/iPhoto Photo Libraries"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudReminders": {
+			"title": "Allow iCloud Reminders",
+			"description": "macOS 10.12 or Later. If false, disables iCloud Reminder services. - Default: true",
+			"default": true,
+			"propertyOrder": 45,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudReminders",
+						"enum_titles": [
+							"true - Allow iCloud Reminders - Default",
+							"false - Disable allow iCloud Reminders"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudDesktopAndDocuments": {
+			"title": "iCloud Desktop and Documents Sync",
+			"description": "Disable or allow iCloud desktop/document/file syncing. - Default: true - CIS Benchmark Compliant: false",
+			"default": true,
+			"propertyOrder": 50,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudDesktopAndDocuments",
+						"enum_titles": [
+							"true - Allow iCloud to access/sync Desktop and Documents - Default",
+							"false - Disable iCloud to access/sync Desktop and Documents - CIS Benchmark Compliant"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudDocumentSync": {
+			"title": "Allow iCloud Document Sync",
+			"description": "Disable or allow iCloud document/file syncing. - Default: true - CIS Benchmark Compliant: false",
+			"default": true,
+			"propertyOrder": 55,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudDocumentSync",
+						"enum_titles": [
+							"true - Enable iCloud document/file sync - Default",
+							"false - Disable iCloud document/file sync - CIS Benchmark Compliant"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudKeychainSync": {
+			"title": "Allow Cloud Keychain Sync",
+			"description": "Enable or block/disable the ability to sync passwords with iCloud Keychain - Default: true - CIS Benchmark Compliant: false",
+			"default": true,
+			"propertyOrder": 60,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudKeychainSync",
+						"enum_titles": [
+							"true - Allow Cloud Keychain Sync - Default",
+							"false - Disable Cloud Keychain Sync - CIS Benchmark Compliant"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudNotes": {
+			"title": "Allow iCloud Notes",
+			"description": "macOS 10.12 or Later. If false, disables iCloud Notes services. - Default: true",
+			"default": true,
+			"propertyOrder": 65,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudNotes",
+						"enum_titles": [
+							"true - Allow iCloud Notes - Default",
+							"false - Disable iCloud Notes"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowContentCaching": {
+			"title": "Content Caching",
+			"description": "Allow Content Caching to be configured on a system - Default: true - CIS Benchmark Compliant: false",
+			"default": true,
+			"propertyOrder": 70,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: allowContentCaching",
+						"enum_titles": [
+							"true - Allow Content Caching - Default",
+							"false - Prevent/Disable Content Caching / Content Caching not allowed - CIS Benchmark Compliant"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowDiagnosticSubmission": {
+			"title": "Diagnostic Submission",
+			"description": "Allow or disable/prevent the submission of diagnostic data - Default: true - CIS Benchmark Compliant: false",
+			"default": true,
+			"propertyOrder": 75,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: allowDiagnosticSubmission",
+						"enum_titles": [
+							"true - Allow submission of diagnostic data - Default",
+							"false - Prevent diagnostic data from being shared or sent / disable diagnostic data sending - CIS Benchmark Compliant"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowActivityContinuation": {
+			"title": "Activity Continuation",
+			"description": "If false, disables activity continuation. Available in macOS 10.15 and later. - Default: true",
+			"default": true,
+			"propertyOrder": 80,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowActivityContinuation",
+						"enum_titles": [
+							"true - Allow Activity Continuation - Default",
+							"false - Disable Activity Continuation"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowAddingGameCenterFriends": {
+			"title": "Allow Adding GameCenter Friends",
+			"description": "Enable/Disable ability to add or remove Game Center Friends - Default: true",
+			"default": true,
+			"propertyOrder": 85,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowAddingGameCenterFriends",
+						"enum_titles": [
+							"true - Allow Adding Game Center Friends - Default",
+							"false - Disable Adding Game Center Friends"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowAirPlayIncomingRequests": {
+			"title": "Allow AirPlay Incoming Requests",
+			"description": "Enable/Disable ability to receive incoming AirPlay requests - Default: true",
+			"default": true,
+			"propertyOrder": 95,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowAirPlayIncomingRequests",
+						"enum_titles": [
+							"true - Allow Incoming AirPlay Requests - Default",
+							"false - Deny/Disable/Ignore Incoming AirPlay Requests"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCamera": {
+			"title": "Allow Camera",
+			"description": "If false, disables the camera, and its icon is removed from the Home screen. Users are unable to take photographs. This restriction is deprecated on unsupervised devices and will be supervised only in a future release.  Available in iOS 4 and later, and macOS 10.11 and later. - Default: true",
+			"default": true,
+			"propertyOrder": 100,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCamera",
+						"enum_titles": [
+							"true - Allow Camera - Default",
+							"false - Disable Camera"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudAddressBook": {
+			"title": "Allow iCloud Address Book",
+			"description": "If false, disables iCloud Address Book services. Available in macOS 10.12 and later. - Default: true",
+			"default": true,
+			"propertyOrder": 105,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudAddressBook",
+						"enum_titles": [
+							"true - Allow iCloud Address Book - Default",
+							"false - Disable iCloud Address Book"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudBookmarks": {
+			"title": "Allow iCloud Bookmarks",
+			"description": "If false, disables iCloud Bookmark sync. Available in macOS 10.12 and later. - Default: true",
+			"default": true,
+			"propertyOrder": 105,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudBookmarks",
+						"enum_titles": [
+							"true - Allow iCloud Bookmark Sync - Default",
+							"false - Disable iCloud Bookmark Sync"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		},
+		"allowCloudCalendar": {
+			"title": "Allow iCloud Calendar Services",
+			"description": "If false, disables iCloud Calendar services. Available in macOS 10.12 and later. - Default: true",
+			"default": true,
+			"propertyOrder": 110,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": true,
+					"options": {
+						"infoText": "Key: allowCloudCalendar",
+						"enum_titles": [
+							"true - Allow iCloud Calendar Services - Default",
+							"false - Disable iCloud Calendar Services"
+						],
+					"enum": [
+						true,
+						false
+					]
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
+					}]
+				}
+			]
+		}
+	},
+	"required": [
+		"allowCloudDesktopAndDocuments",
+		"allowCloudDocumentSync",
+		"allowCloudKeychainSync",
+		"allowContentCaching",
+		"allowDiagnosticSubmission"
+	]
+}
