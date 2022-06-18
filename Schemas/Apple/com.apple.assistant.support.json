@@ -1,0 +1,75 @@
+{
+	"title": "com.apple.assistant.support",
+	"description": "Enable/Disable Siri - Enable/Disable Siri Data Sharing - Preference Domain: com.apple.assistant.support,  Application: Siri",
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.applicationaccess",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"definitions": {
+		"policy_group": {
+			"type": "object",
+			"format": "grid",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			}
+		}
+	},
+	"properties": {
+		"Siri Data Sharing Opt-In Status": {
+			"title": "Allow Siri Data Sharing",
+			"description": "If set to 2, disables Siri Data Sharing",
+			"default": 1,
+			"propertyOrder": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"infoText": "Key: Siri Data Sharing Opt-In Status",
+						"enum_titles": [
+							"1 - Enable Siri Data Sharing - Default",
+							"2 - Disable Siri Data Sharing"
+						]
+					},
+					"enum": [
+						1,
+						2
+					]
+				}
+			]
+		},
+		"Assistant Enabled": {
+			"title": "Enable/Disable Siri",
+			"description": "If set to false, disables Siri. - Default: true",
+			"default": true,
+			"propertyOrder": 15,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: Siri Data Sharing Opt-In Status",
+						"enum_titles": [
+							"true - Enable Siri - Default",
+							"false - Disable Siri"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
+		}
+	}
+}
