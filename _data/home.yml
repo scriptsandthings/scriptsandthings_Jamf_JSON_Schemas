@@ -16,8 +16,7 @@ project_entries:
 
   - title: PaloAlto
     url: https://github.com/scriptsandthings/scriptsandthings_Jamf_JSON_Schemas/tree/main/Schemas/PaloAlto
-    desc: "JSON Schemas for Jamf Pro - For configuration of application settings from within the Jamf web GUI"
-    highlight: WIP
+    desc: JSON Schemas for PaloAlto GlobalProtect
 
   - title: VMWare
     url: https://github.com/scriptsandthings/scriptsandthings_Jamf_JSON_Schemas/tree/main/Schemas/VMware
@@ -33,7 +32,6 @@ footer_entries:
 
   - title: My LinkedIn
     url: https://www.linkedin.com/in/gregknac/
-    
     
 # misc_entries:
 # Shows on homepage under 'Details" heading
