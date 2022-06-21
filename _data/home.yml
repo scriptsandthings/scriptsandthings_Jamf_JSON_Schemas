@@ -16,7 +16,7 @@ project_entries:
 
   - title: PaloAlto
     url: https://github.com/scriptsandthings/scriptsandthings_Jamf_JSON_Schemas/tree/main/Schemas/PaloAlto
-    desc: JSON Schemas for Jamf Pro - For configuration of application settings from within the Jamf web GUI
+    desc: "JSON Schemas for Jamf Pro - For configuration of application settings from within the Jamf web GUI"
     highlight: WIP
 
   - title: VMWare
