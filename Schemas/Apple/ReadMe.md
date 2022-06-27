@@ -10,3 +10,11 @@ These JSON schemas may cover additional settings that are not required by CIS be
 #### Note: All of the .plists spit out by the [CIS-macOS-Security project](https://github.com/mvdbent/CIS-macOS-Security) level 1 and level 2 have been converted to JSON schemas (except one, com.apple.dock.plist and finishing that up next) and added to this repo (with some additional keys added). They're functional from my testing, still need to add "more info" URLs for some and other housekeeping. 
 
 I'll continue working on adding the last missing JSON schema in the next few days, and continue updating these JSON schemas to add additional keys covered by the [Apple Device Managment documentation](https://developer.apple.com/documentation/devicemanagement) over the next few weeks to make them a bit more comprehensive in what they cover beyond just applying suggested CIS benchmarks to macOS Monterey (and macOS Big Sur in some cases).
+
+
+### Navigation
+
+- [Scripts and Things Jamf JSON Schemas Home](https://gregknackstedt/scriptsandthings_Jamf_JSON_Schemas)
+- [Scripts and Things Homepage](https://gregknackstedt.com/)
+- [Jamf Things Documentation - Home](https://gregknackstedt.com/Jamf_things/Documentation/)
+- [Jamf Things - Home](https://gregknackstedt.com/Jamf_things/Documentation/)
