@@ -14,7 +14,7 @@ I'll continue working on adding the last missing JSON schema in the next few day
 
 ### Navigation
 
-- [Scripts and Things Jamf JSON Schemas Home](https://gregknackstedt/scriptsandthings_Jamf_JSON_Schemas)
 - [Scripts and Things Homepage](https://gregknackstedt.com/)
+- [Jamf Things - Home](https://gregknackstedt.com/Jamf_things/)
+- [Scripts and Things Jamf JSON Schemas Home](https://gregknackstedt/scriptsandthings_Jamf_JSON_Schemas)
 - [Jamf Things Documentation - Home](https://gregknackstedt.com/Jamf_things/Documentation/)
-- [Jamf Things - Home](https://gregknackstedt.com/Jamf_things/Documentation/)
