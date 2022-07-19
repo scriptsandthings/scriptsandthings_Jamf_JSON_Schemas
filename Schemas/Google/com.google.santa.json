@@ -1,0 +1,1155 @@
+{
+	"title": "Santa (com.google.santa)",
+	"description": "INCOMPLETE / UN-TESTED - Santa.app - Configure settings via JSON schema in Jamf Pro",
+	"__version": "0.1",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.google.santa",
+	"options": {
+		"remove_empty_properties": "true"
+	},
+	"properties": {
+		"ClientMode": {
+			"title": "Client Mode",
+			"description": "1 = MONITOR, 2 = LOCKDOWN, defaults to MONITOR - Running Santa in Monitor Mode will stop any binaries matching block rules, but will not stop unknown binaries from running. This is a flexible state, allowing virtually zero user interruption but still gives protection against known blocked binaries. - Running Santa in Lockdown Mode will stop all blocked binaries and additionally will prevent all unknown binaries from running. This means that if the binary has no rules or scopes that apply, then it will be blocked.",
+			"type": "integer",
+			"propertyOrder": 5,
+			"default": 1,
+			"enum": [
+				1,
+				2
+			],
+			"options": {
+				"infoText": "Key: ClientMode",
+				"enum_titles": [
+					"1 - Monitor (Default)",
+					"2 - Lockdown"
+				]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"FailClosed": {
+			"type": "boolean",
+			"title": "FailClosed",
+			"description": "If true and the ClientMode is LOCKDOWN: execution will be denied when there is an error reading or processing an executable file.",
+			"property_order": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"options": {
+						"infoText": "Key: FailClosed",
+						"enum_titles": [
+							"True - Fail Closed: Enabled - Deny execution on error",
+							"False - Fail Closed: Disabled - Allow execution ignoring errors"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"FileChangesRegex": {
+			"type": "string",
+			"title": "File Changes Regex",
+			"description": "The regex of paths to log file changes. - Regexes are specified in ICU format.",
+			"property_order": 15,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: FileChangesRegex"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"AllowedPathRegex": {
+			"type": "string",
+			"title": "Allowed Path Regex",
+			"description": "A regex to allow if the binary, certificate, or Team ID scopes did not allow/block execution. - Regexes are specified in ICU format.",
+			"property_order": 20,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: AllowedPathRegex"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"BlockedPathRegex": {
+			"type": "string",
+			"title": "Blocked Path Regex",
+			"description": "A regex to block if the binary, certificate, or Team ID scopes did not allow/block execution. - Regexes are specified in ICU format.",
+			"property_order": 25,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: BlockedPathRegex"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"WhitelistRegex": {
+			"type": "string",
+			"title": "Allowlist Regex",
+			"description": "Depreciated? - Likely replaced by AllowedPathRegex",
+			"property_order": 30,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: WhitelistRegex"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"BlacklistRegex": {
+			"type": "string",
+			"title": "Denylist Regex",
+			"description": "Depreciated? - Likely replaced by BlockedPathRegex",
+			"property_order": 35,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: BlacklistRegex"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EnablePageZeroProtection": {
+			"type": "boolean",
+			"title": "Enable Page Zero Protection",
+			"description": "Enable __PAGEZERO protection - If this flag is set to YES, 32-bit binaries that are missing the __PAGEZERO segment will be blocked even in MONITOR mode, unless the binary is allowed by an explicit rule. - Default: YES",
+			"default": true,
+			"property_order": 40,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"options": {
+						"infoText": "Key: EnablePageZeroProtection",
+						"enum_titles": [
+							"YES - __PAGEZERO protection Enabled - (Default)",
+							"NO - __PAGEZERO protection Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EnableBadSignatureProtection": {
+			"type": "boolean",
+			"title": "Enable Bad Signature Protection",
+			"description": "Enable bad signature protection - If this flag is set to YES, binaries with a bad signing chain will be blocked even in MONITOR mode, unless the binary is allowed by an explicit rule.- Default: NO",
+			"default": true,
+			"property_order": 45,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"options": {
+						"infoText": "Key: EnableBadSignatureProtection",
+						"enum_titles": [
+							"YES - Bad signature protection Enabled",
+							"NO - Bad signature protection Disabled - (Default)"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EnableSysxCache": {
+			"type": "boolean",
+			"title": "Enable Sysx Cache",
+			"description": "Enables a secondary cache that ensures better performance when multiple EndpointSecurity system extensions are installed. - Default: YES in 2021.8, defaults to NO in earlier versions.",
+			"default": true,
+			"property_order": 50,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"options": {
+						"infoText": "Key: EnableSysxCache",
+						"enum_titles": [
+							"YES - Sysx Cache Enabled - (Default versions 2021.8 and later)",
+							"NO - Sysx Cache Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"AboutText": {
+			"type": "string",
+			"title": "About Text",
+			"description": "The text to display when the user opens Santa.app. If unset, the default text will be displayed.",
+			"property_order": 55,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: AboutText"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MoreInfoURL": {
+			"type": "string",
+			"title": "More Info URL",
+			"description": "The URL to open when the user clicks “More Info…” when opening Santa.app. If unset, the button will not be displayed.",
+			"property_order": 60,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MoreInfoURL"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EventDetailURL": {
+			"type": "string",
+			"title": "Event Detail URL",
+			"description": "See the EventDetailURL documentation by clicking the 'Launch EventDetailURL Documentation' button.",
+			"property_order": 65,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: EventDetailURL",
+						"inputAttributes": {
+							"placeholder": "https://yoursync-server-hostname.com/%machine_id%/%file_sha%"
+						}
+					}
+				}
+			],
+			"links": [{
+				"rel": "Launch EventDetailURL Documentation",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile#EventDetailURL"
+			}]
+		},
+		"EventDetailText": {
+			"type": "string",
+			"title": "Event Detail Text",
+			"description": "Related to EventDetailURL property. The EventDetailText represents the text to show on the button.",
+			"property_order": 70,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: EventDetailText"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"UnknownBlockMessage": {
+			"type": "string",
+			"title": "Unknown Block Message",
+			"description": "In Lockdown mode this is the message shown to the user when an unknown binary is blocked. If this message is not configured a reasonable default is provided.",
+			"property_order": 75,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: UnknownBlockMessage"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"BannedBlockMessage": {
+			"type": "string",
+			"title": "Banned Block Message",
+			"description": "This is the message shown to the user when a binary is blocked because of a rule if that rule doesn’t provide a custom message. If this is not configured a reasonable default is provided.",
+			"property_order": 80,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: BannedBlockMessage"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ModeNotificationMonitor": {
+			"type": "string",
+			"title": "Mode Notification Monitor",
+			"description": "The notification text to display when the client goes into Monitor mode.",
+			"property_order": 85,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": "Switching into Monitor mode",
+					"options": {
+						"infoText": "Key: ModeNotificationMonitor"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ModeNotificationLockdown": {
+			"type": "string",
+			"title": "Mode Notification Lockdown",
+			"description": "The notification text to display when the client goes into Lockdown mode.",
+			"property_order": 90,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": "Switching into Lockdown mode",
+					"options": {
+						"infoText": "Key: ModeNotificationLockdown"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"SyncBaseURL": {
+			"type": "string",
+			"title": "Sync Base URL",
+			"description": "The base URL of the sync server.",
+			"property_order": 95,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: SyncBaseURL"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"SyncEnableCleanSyncEventUpload": {
+			"type": "boolean",
+			"title": "Sync Enable Clean Sync Event Upload",
+			"description": "If true, events will be uploaded to the sync server even if a clean sync is requested. Default: False.",
+			"property_order": 100,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: SyncEnableCleanSyncEventUpload",
+						"enum_titles": [
+							"True - Clean Sync Event Upload Enabled",
+							"False - Clean Sync Event Upload Disabled - (Default)"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ClientAuthCertificateFile": {
+			"type": "string",
+			"title": "Client Auth Certificate File",
+			"description": "If set, this contains the location of a PKCS#12 certificate to be used for sync authentication.",
+			"property_order": 105,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: ClientAuthCertificateFile"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ClientAuthCertificatePassword": {
+			"type": "string",
+			"title": "Client Auth Certificate Password",
+			"description": "Contains the password for the PKCS#12 certificate.",
+			"property_order": 110,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: ClientAuthCertificateFile"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ClientAuthCertificateCN": {
+			"type": "string",
+			"title": "Client Auth Certificate CN",
+			"description": "If set, this is the Common Name of a certificate in the System keychain to be used for sync authentication. The corresponding private key must also be in the keychain.",
+			"property_order": 115,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: ClientAuthCertificateCN"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ClientAuthCertificateIssuerCN": {
+			"type": "string",
+			"title": "Client Certificate Issuer CN",
+			"description": "If set, this is the Issuer Name of a certificate in the System keychain to be used for sync authentication. The corresponding private key must also be in the keychain.",
+			"property_order": 120,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: ClientAuthCertificateIssuerCN"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"ServerAuthRootsFile": {
+			"type": "string",
+			"title": "Server Auth Roots File",
+			"description": "The same as ServerAuthRootsData, but is a path to a file on disk containing the PEM data.",
+			"property_order": 125,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: ServerAuthRootsFile"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MachineOwner": {
+			"type": "string",
+			"title": "Machine Owner",
+			"description": "The machine owner.",
+			"property_order": 130,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineOwner"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MachineID": {
+			"type": "string",
+			"title": "Machine ID",
+			"description": "The machine ID.",
+			"property_order": 135,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineID"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/concepts/mode.html"
+			}]
+		},
+		"MachineOwnerPlist": {
+			"type": "string",
+			"title": "Machine Owner Plist",
+			"description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+			"property_order": 140,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineOwnerPlist"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MachineOwnerKey": {
+			"type": "string",
+			"title": "Machine Owner Key",
+			"description": "The key to use on MachineOwnerPlist.",
+			"property_order": 145,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineOwnerKey"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MachineIDPlist": {
+			"type": "string",
+			"title": "Machine ID Plist",
+			"description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+			"property_order": 150,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineIDPlist"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MachineIDKey": {
+			"type": "string",
+			"title": "Machine ID Key",
+			"description": "The key to use on MachineIDPlist.",
+			"property_order": 155,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MachineIDKey"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EventLogType": {
+			"type": "string",
+			"title": "Event Log Type",
+			"description": "Defines how event logs are stored. Default: filelog",
+			"property_order": 160,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": "filelog",
+					"options": {
+						"infoText": "Key: EventLogType",
+						"enum_titles": [
+							"syslog: Sent to ASL or ULS",
+							"filelog: Sent to a file on disk. Use EventLogPath to specify a path. - (Default)",
+							"protobuf: (BETA): Sent to file on disk using maildir format.",
+							"null: Don’t output any event logs."
+						]
+					},
+					"enum": [
+						"syslog",
+						"filelog",
+						"protobuf",
+						"null"
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EventLogPath": {
+			"type": "string",
+			"title": "Event Log Path",
+			"description": "If EventLogType is set to filelog, EventLogPath will provide the path to save logs. Defaults to /var/db/santa/santa.log. If you change this value ensure you also update com.google.santa.newsyslog.conf with the new path.",
+			"property_order": 165,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": "/var/db/santa/santa.log",
+					"options": {
+						"infoText": "Key: EventLogPath"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MailDirectory": {
+			"type": "string",
+			"title": "Mail Directory",
+			"description": "If EventLogType is set to protobuf, MailDirectory will provide the the base directory used to save files according to the maildir format. - Default: /var/db/santa/mail",
+			"property_order": 170,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": "/var/db/santa/mail",
+					"options": {
+						"infoText": "Key: MailDirectory"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MailDirectorySizeThresholdMB": {
+			"type": "integer",
+			"title": "MailDirectorySizeThresholdMB",
+			"description": "If EventLogType is set to protobuf, MailDirectorySizeThresholdMB defines the total combined size limit of all files in the mail directory. Once the threshold is met, no more events will be saved. - Default: 500.",
+			"property_order": 175,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 500,
+					"options": {
+						"infoText": "Key: MailDirectorySizeThresholdMB"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MailDirectoryEventMaxFlushTimeSec": {
+			"type": "integer",
+			"title": "MailDirectoryEventMaxFlushTimeSec",
+			"description": "If EventLogType is set to protobuf, MailDirectoryEventMaxFlushTimeSec defines the maximum amount of time events will stay buffered in memory before being flushed to disk, regardless of whether or not MailDirectoryFileSizeThresholdKB would be exceeded. - Default: 5.",
+			"property_order": 180,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 50000,
+					"default": 5,
+					"options": {
+						"infoText": "Key: MailDirectoryEventMaxFlushTimeSec"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EnableMachineIDDecoration": {
+			"type": "boolean",
+			"title": "Enable Machine ID Decoration",
+			"description": "If YES, this appends the MachineID to the end of each log line. - Default: NO",
+			"property_order": 185,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"default": false,
+					"options": {
+						"infoText": "Key: EnableMachineIDDecoration",
+						"enum_titles": [
+							"Machine ID Decoration Enabled",
+							"Machine ID Decoration Disabled - (Default)"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile - Full configuration profile documentation."
+			}]
+		},
+		"MetricFormat": {
+			"type": "string",
+			"title": "Metric Format",
+			"description": "Format to export metrics as, supported formats are “rawjson” for a single JSON blob and “monarchjson” for a format consumable by Google’s Monarch tooling.",
+			"property_order": 190,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MetricFormat",
+						"enum_titles": [
+							"Default Format",
+							"rawjson - Single JSON blob.",
+							"monarchjson - Consumable by Google’s Monarch tooling."
+						]
+					},
+					"enum": [
+						"",
+						"rawjson",
+						"monarchjson"
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MetricURL": {
+			"type": "string",
+			"title": "Metric URL",
+			"description": "URL describing where monitoring metrics should be exported.",
+			"property_order": 200,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MetricURL"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MetricExportInterval": {
+			"type": "integer",
+			"title": "Metric Export Interval",
+			"description": "Number of seconds to wait between exporting metrics. - Default: 30.",
+			"property_order": 205,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 30,
+					"options": {
+						"infoText": "Key: MetricExportInterval"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MetricExportTimeout": {
+			"type": "integer",
+			"title": "Metric Export Timeout",
+			"description": "Number of seconds to wait before a timeout occurs when exporting metrics. - Default: 30.",
+			"property_order": 210,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"default": 30,
+					"options": {
+						"infoText": "Key: MetricExportTimeout"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"MetricExtraLabels": {
+			"type": "dict",
+			"title": "Metric Extra Labels",
+			"description": "A map of key value pairs to add to all metric root labels. (e.g. a=b,c=d) defaults to @{}). If a previously set key (e.g. host_name is set to “” then the key is remove from the metric root labels. Alternatively if a value is set for an existing key then the new value will override the old.",
+			"property_order": 220,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "dict",
+					"options": {
+						"infoText": "Key: MetricExtraLabels"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"EnableAllEventUpload": {
+			"type": "boolean",
+			"title": "All Event Upload",
+			"description": "If YES, the client will upload all execution events to the sync server, including those that were explicitly allowed.",
+			"property_order": 225,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: EnableAllEventUpload",
+						"enum_titles": [
+							"All Event Upload - Enabled",
+							"All Event Upload - Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"DisableUnknownEventUpload": {
+			"type": "boolean",
+			"title": "Disable Unknown Event Upload",
+			"description": "If YES, the client will not upload events for executions of unknown binaries allowed in monitor mode",
+			"property_order": 230,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"options": {
+						"infoText": "Key: DisableUnknownEventUpload",
+						"enum_titles": [
+							"YES - Unknown Event Upload - Enabled",
+							"NO - Unknown Event Upload - Disabled"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"BlockUSBMount": {
+			"type": "boolean",
+			"title": "Block USB Mount",
+			"description": "If YES, blocks the abiligy to mount volumes via USB - Default: NO",
+			"property_order": 235,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: BlockUSBMount",
+						"enum_titles": [
+							"Block USB Mount Enabled",
+							"Block USB Mount Disabled - (Default)"
+						]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile - Full configuration profile documentation."
+			}]
+		},
+		"bannedUSBBlockMessage": {
+			"type": "string",
+			"title": "Banned USB Block Message",
+			"description": "This is the message shown to the user when a USB storage device's mount is denied from the BlockUSB configuration setting. If not configured, a reasonable default is provided.",
+			"property_order": 240,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: bannedUSBBlockMessage"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"remountUSBBlockMessage": {
+			"type": "string",
+			"title": "Remount USB Block Message",
+			"description": "This is the message shown to the user when a USB storage device's mount is forcibly remounted to a different set of permissions from the BlockUSB and RemountUSBMode configuration settings. If not configured, a reasonable default is provided.",
+			"property_order": 245,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: remountUSBBlockMessage"
+					}
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		}
+	}
+}
