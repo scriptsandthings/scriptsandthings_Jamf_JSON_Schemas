@@ -2,7 +2,7 @@
 
 ### Santa
 
-##### In-Progress / Not Tested
+#### In-Progress / Not Tested
 
 Messing around with Santa as an alternative for USB volume blocking. I don't have a sync server or way to quickly stand one up.
 
