@@ -1,7 +1,7 @@
 {
 	"title": "Santa (com.google.santa)",
 	"description": "INCOMPLETE / UN-TESTED - Santa.app - Configure settings via JSON schema in Jamf Pro",
-	"__version": "0.1",
+	"__version": "0.2",
 	"__feedback": "shitttyscripts@gmail.com",
 	"__preferencedomain": "com.google.santa",
 	"options": {
@@ -751,15 +751,15 @@
 					"options": {
 						"infoText": "Key: EventLogType",
 						"enum_titles": [
-							"syslog: Sent to ASL or ULS",
 							"filelog: Sent to a file on disk. Use EventLogPath to specify a path. - (Default)",
+							"syslog: Sent to ASL or ULS",
 							"protobuf: (BETA): Sent to file on disk using maildir format.",
 							"null: Don’t output any event logs."
 						]
 					},
 					"enum": [
-						"syslog",
 						"filelog",
+						"syslog",
 						"protobuf",
 						"null"
 					]
@@ -879,13 +879,13 @@
 					"options": {
 						"infoText": "Key: EnableMachineIDDecoration",
 						"enum_titles": [
-							"Machine ID Decoration Enabled",
-							"Machine ID Decoration Disabled - (Default)"
+							"False - Machine ID Decoration Disabled - (Default)",
+							"True - Machine ID Decoration Enabled"
 						]
 					},
 					"enum": [
-						true,
-						false
+						false,
+						true
 					]
 				}
 			],
@@ -909,7 +909,7 @@
 					"options": {
 						"infoText": "Key: MetricFormat",
 						"enum_titles": [
-							"Default Format",
+							"Default Format - Default is ''.",
 							"rawjson - Single JSON blob.",
 							"monarchjson - Consumable by Google’s Monarch tooling."
 						]
@@ -1005,7 +1005,7 @@
 				},
 				{
 					"title": "Configured",
-					"type": "dict",
+					"type": "array",
 					"options": {
 						"infoText": "Key: MetricExtraLabels"
 					}
@@ -1019,7 +1019,7 @@
 		"EnableAllEventUpload": {
 			"type": "boolean",
 			"title": "All Event Upload",
-			"description": "If YES, the client will upload all execution events to the sync server, including those that were explicitly allowed.",
+			"description": "If true, the client will upload all execution events to the sync server, including those that were explicitly allowed.",
 			"property_order": 225,
 			"anyOf": [{
 					"title": "Not Configured",
@@ -1031,8 +1031,8 @@
 					"options": {
 						"infoText": "Key: EnableAllEventUpload",
 						"enum_titles": [
-							"All Event Upload - Enabled",
-							"All Event Upload - Disabled"
+							"True - All Event Upload - Enabled",
+							"False - All Event Upload - Disabled"
 						]
 					},
 					"enum": [
@@ -1049,7 +1049,7 @@
 		"DisableUnknownEventUpload": {
 			"type": "boolean",
 			"title": "Disable Unknown Event Upload",
-			"description": "If YES, the client will not upload events for executions of unknown binaries allowed in monitor mode",
+			"description": "If true, the client will not upload events for executions of unknown binaries allowed in monitor mode",
 			"property_order": 230,
 			"anyOf": [{
 					"title": "Not Configured",
@@ -1061,8 +1061,8 @@
 					"options": {
 						"infoText": "Key: DisableUnknownEventUpload",
 						"enum_titles": [
-							"YES - Unknown Event Upload - Enabled",
-							"NO - Unknown Event Upload - Disabled"
+							"True - Unknown Event Upload - Enabled",
+							"False - Unknown Event Upload - Disabled"
 						]
 					},
 					"enum": [
@@ -1079,7 +1079,7 @@
 		"BlockUSBMount": {
 			"type": "boolean",
 			"title": "Block USB Mount",
-			"description": "If YES, blocks the abiligy to mount volumes via USB - Default: NO",
+			"description": "If 1, blocks the abiligy to mount volumes via USB - Default: 0",
 			"property_order": 235,
 			"anyOf": [{
 					"title": "Not Configured",
@@ -1092,13 +1092,13 @@
 					"options": {
 						"infoText": "Key: BlockUSBMount",
 						"enum_titles": [
-							"Block USB Mount Enabled",
-							"Block USB Mount Disabled - (Default)"
+							"False - Block USB Mount Disabled - (Default)",
+							"True - Block USB Mount Enabled"
 						]
 					},
 					"enum": [
-						true,
-						false
+						false,
+						true
 					]
 				}
 			],
@@ -1149,6 +1149,68 @@
 			"links": [{
 				"rel": "More information",
 				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile"
+			}]
+		},
+		"block_usb_mount": {
+			"type": "boolean",
+			"title": "Block USB Mount - Underscores",
+			"description": "If 1, blocks the abiligy to mount volumes via USB - Default: 0",
+			"property_order": 250,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: block_usb_mount",
+						"enum_titles": [
+							"False - Block USB Mount Disabled - (Default)",
+							"True - Block USB Mount Enabled"
+						]
+					},
+					"enum": [
+						false,
+						true
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile - Full configuration profile documentation."
+			}]
+		},
+		"block_usb_mass_storage": {
+			"type": "boolean",
+			"title": "Block USB Mass Storage",
+			"description": "If set to ‘True’ blocking USB Mass storage feature is enabled. Default: False.",
+			"property_order": 255,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: block_usb_mass_storage",
+						"enum_titles": [
+							"False - Block USB Mount Disabled - (Default)",
+							"True - Block USB Mount Enabled"
+						]
+					},
+					"enum": [
+						false,
+						true
+					]
+				}
+			],
+			"links": [{
+				"rel": "More information",
+				"href": "https://santa.dev/deployment/configuration.html#local-configuration-profile - Full configuration profile documentation."
 			}]
 		}
 	}
