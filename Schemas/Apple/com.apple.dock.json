@@ -1,0 +1,935 @@
+{
+	"title": "macOS Dock Settings (com.apple.dock)",
+	"description": "Security Settings and many other configuration options the macOS Dock.",
+	"__version": "0.1",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.dock",
+	"type": "object",
+	"links": [{
+		"rel": "Apple Developer Documentation",
+		"href": "https://developer.apple.com/documentation/devicemanagement/dock"
+	}],
+	"__version": "1.0",
+	"__feedback": "shitttyscripts@gmail.com",
+	"__preferencedomain": "com.apple.dock",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"definitions": {
+		"policy_group": {
+			"type": "object",
+			"format": "grid",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			}
+		}
+	},
+	"properties": {
+		"AllowDockFixupOverride": {
+			"title": "Allow Dock Fixup Override",
+			"description": "If true, use the file in /Library/Preferences/com.apple.dockfixup.plist when a new user or migrated user logs in. This option has no effect for existing users. Available in macOS 10.12 and later. Only available on the device channel. - Default: false",
+			"propertyOrder": 10,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": "false",
+					"options": {
+						"infoText": "Key: AllowDockFixupOverride",
+						"enum_titles": [
+							"true - use the file in /Library/Preferences/com.apple.dockfixup.plist when a new user or migrated user logs in.",
+							"false - Do not use the file in /Library/Preferences/com.apple.dockfixup.plist when a new user or migrated user logs in. - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"autohide": {
+			"title": "Auto Hide",
+			"description": "If true, enables 'Automatically hide and show the dock.' - Default: false",
+			"propertyOrder": 15,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: autohide",
+						"enum_titles": [
+							"true - Enable 'Automatically hide and show the dock.'",
+							"false - Disable 'Automatically hide and show the dock.' - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"autohide-immutable": {
+			"title": "Auto Hide Immutable",
+			"description": "If true, locks 'Automatically hide.' - Default: false",
+			"propertyOrder": 20,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: autohide-immutable",
+						"enum_titles": [
+							"true - Lock 'Automatically hide.'",
+							"false - Allow user modification of 'Automatically hide.' - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"contents-immutable": {
+			"title": "Contents Immutable",
+			"description": "If true, disables changes to the dock. - Default: false",
+			"propertyOrder": 25,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: contents-immutable",
+						"enum_titles": [
+							"true - Disable changes to the dock.",
+							"false - Allow user  changes to the dock. - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"dblclickbehavior": {
+			"title": "Double Click Behavior",
+			"description": "The behavior when the window's title bar is double-clicked.",
+			"propertyOrder": 30,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"enum_titles": [
+						"minimize - Minimize the window to the Dock when title bar is double clicked",
+						"maximize - Maximize the window when the title bar is double clicked",
+						"none - Do nothing to the window when title bar is double clicked"
+					],
+					"enum": [
+						"minimize",
+						"maximize",
+						"none"
+					],
+					"options": {
+						"infoText": "Key: dblclickbehavior"
+					}
+				}
+			]
+		},
+		"dblclickbehavior-immutable": {
+			"title": "Double Click Behavior Immutable",
+			"description": "If true, locks 'Double-click a window's title bar.' - Default: false",
+			"propertyOrder": 35,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: dblclickbehavior-immutable",
+						"enum_titles": [
+							"true - Lock 'Double-click a window's title bar.'",
+							"false - Allow user modification of 'Double-click a window's title bar.' - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"largesize": {
+			"title": "Large Size",
+			"description": "The size of the largest magnification.",
+			"propertyOrder": 40,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"minimum": 16,
+					"maximum": 128,
+					"options": {
+						"infoText": "Key: autohide-immutable"
+					}
+				}
+			]
+		},
+		"launchanim": {
+			"title": "Launch Animation",
+			"description": "If true, enables 'Animate opening applications.' - Default: false",
+			"propertyOrder": 45,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: launchanim",
+						"enum_titles": [
+							"true -  Enable 'Animate opening applications.'",
+							"false - Disable 'Animate opening applications.' - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"launchanim-immutable": {
+			"title": "Launch Animation Immutable",
+			"description": "If true, locks 'Animate opening applications.' - Default: false",
+			"propertyOrder": 50,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: launchanim-immutable",
+						"enum_titles": [
+							"true - Lock 'Animate opening applications.'",
+							"false - Allow user modification of 'Animate opening applications.' - Default"
+
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"magnification": {
+			"title": "Magnification",
+			"description": "If true, enables magnification. - Default: false",
+			"propertyOrder": 55,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: magnification",
+						"enum_titles": [
+							"true - Enable Dock magnification.",
+							"false - Disable Dock magnification. - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"magnify-immutable": {
+			"title": "Magnify Immutable",
+			"description": "If true, locks magnification. - Default: false",
+			"propertyOrder": 60,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: magnify-immutable",
+						"enum_titles": [
+							"true - Lock modification of Dock magnification",
+							"false - Allow user modification of Dock magnification - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"MCXDockSpecialFolders": {
+			"title": "MCX Dock Special Folders",
+			"description": "One or more special folders that may be created at user login time and placed in the dock. The 'My Applications' item is only used for Simple Finder environments. The 'Original Network Home' item is only used for mobile account users. - Possible values: AddDockMCXMyApplicationsFolder, AddDockMCXDocumentsFolder, AddDockMCXSharedFolder, AddDockMCXOriginalNetworkHomeFolder",
+			"propertyOrder": 65,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"options": {
+						"infoText": "Key: MCXDockSpecialFolders"
+					}
+				}
+			]
+		},
+		"mineffect": {
+			"title": "Minimize Effect - 'Minimize windows using.'",
+			"description": "The minimize effect/animation for windows as they minimize into the Dock.",
+			"propertyOrder": 70,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": null,
+					"options": {
+						"infoText": "Key: mineffect",
+						"enum_titles": [
+							"genie - Use the 'genie' effect when minimizing windows into the Dock",
+							"scale - Use the 'scale' effect when minimizing windows into the Dock"
+						],
+						"enum": [
+							"genie",
+							"scale"
+						]
+					}
+				}
+			]
+		},
+		"mineffect-immutable": {
+			"title": "Minimize Effect Immutable",
+			"description": "If true, locks 'Minimize windows using.' - Default: false",
+			"propertyOrder": 75,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: mineffect-immutable",
+						"enum_titles": [
+							"true - Lock 'Minimize windows using.' for the Dock",
+							"false - Allow user modification of the 'Minimize windows using.' setting for the Dock - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"minimize-to-application": {
+			"title": "Minimize to Application",
+			"description": "If true, enables 'Minimize windows into application icon.' - Default: false",
+			"propertyOrder": 80,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: minimize-to-application",
+						"enum_titles": [
+							"true - Lock 'Minimize windows into application icon.'",
+							"false - Allow user modification of the 'Minimize windows into application icon.' setting for the Dock - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"minintoapp-immutable": {
+			"title": "Minimize Into Application Immutable",
+			"description": "If true, disables the 'Minimize windows into application icon' checkbox. - Default: false",
+			"propertyOrder": 85,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: minintoapp-immutable",
+						"enum_titles": [
+							"true - Lock 'Minimize windows into application icon' in Dock settings",
+							"false - Allow user modification of the 'Minimize windows into application icon' checkbox in Dock settings. - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"orientation": {
+			"title": "Orientation",
+			"description": "The orientation of the dock.",
+			"propertyOrder": 90,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"enum_titles": [
+						"bottom - Place the Dock on the bottom of the primary display",
+						"left - Place the Dock on the left of the displays",
+						"right - Place the Dock on the right of the displays"
+					],
+					"enum": [
+						"bottom",
+						"left",
+						"right"
+					],
+					"options": {
+						"infoText": "Key: orientation"
+					}
+				}
+			]
+		},
+		"position-immutable": {
+			"title": "Postion Immutable",
+			"description": "If true, locks the position of the Dock - Default: false",
+			"propertyOrder": 95,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: position-immutable",
+						"enum_titles": [
+							"true - Lock the position of the Dock",
+							"false - Allow user modification of the position of the Dock - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"show-process-indicators": {
+			"title": "Show Process Indicators",
+			"description": "If true, shows the process indicator - Default: false",
+			"propertyOrder": 100,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: show-process-indicators",
+						"enum_titles": [
+							"true - Shows the process indicator",
+							"false, Hides the process indicator - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"showindicators-immutable": {
+			"title": "Show Indicators Immutable",
+			"description": "If true, locks 'Show indicators.' - Default: false",
+			"propertyOrder": 105,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: showindicators-immutable",
+						"enum_titles": [
+							"true - Lock 'Show indicators' in Dock settings",
+							"false - Allow user modification of 'Show indicators.' in Dock settings - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"show-recents": {
+			"title": "Show Recents",
+			"description": "If true, enables 'Show recent items.' for the Dock- Default: false",
+			"propertyOrder": 110,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: show-recents",
+						"enum_titles": [
+							"true - Enables 'Show recent items.'",
+							"false - Disables 'Show recent items.' - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"showrecents-immutable": {
+			"title": "Show Recents Immutable",
+			"description": "If true, disables 'Show recent applications' checkbox. - Default: false",
+			"propertyOrder": 115,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: showrecents-immutable",
+						"enum_titles": [
+							"true - Disable 'Show recent applications' checkbox in Dock settings",
+							"false - Allow user modification of 'Show recent applications' in Dock settings - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"size-immutable": {
+			"title": "Size Immutable",
+			"description": "If true, locks the size slider. - Default: false",
+			"propertyOrder": 120,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: size-immutable",
+						"enum_titles": [
+							"true - Locks the size slider in Dock settings",
+							"false - Allow user modification of the size slider in Dock settings - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		},
+		"tilesize": {
+			"title": "Tile Size",
+			"description": "The tile size. Values must be in the range from 16 to 128.",
+			"default": null,
+			"propertyOrder": 125,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 128,
+					"options": {
+						"infoText": "Key: tilesize"
+					}
+				}
+			]
+		},
+		"windowtabbing": {
+			"title": "Window Tabbing",
+			"description": "Set the 'Prefer tabs when opening documents' to the provided value.",
+			"default": null,
+			"propertyOrder": 130,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "string",
+					"default": false,
+					"enum_titles": [
+						"manual - Manually select how documents open in regards to tabs or full screen (Don't do anything automatic/consistantly)",
+						"always - Always open documents in new tabs",
+						"fullscreen - Always open documents fullscreen"
+					],
+					"enum": [
+						"manual",
+						"always",
+						"fullscreen"
+					],
+					"options": {
+						"infoText": "Key: windowtabbing"
+					}
+				}
+			]
+		},
+		"windowtabbing-immutable": {
+			"title": "Window Tabbing Immutable",
+			"description": "If true, disables 'Prefer tabs when opening documents' checkbox. - Default: false",
+			"propertyOrder": 135,
+			"default": null,
+			"anyOf": [{
+					"title": "Not Configured",
+					"type": "null"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"infoText": "Key: windowtabbing-immutable",
+						"enum_titles": [
+						"true - Disables 'Prefer tabs when opening documents' checkbox.",
+						"false - Allow user modification of the 'Prefer tabs when opening documents' checkbox - Default"
+					]
+					},
+					"enum": [
+						true,
+						false
+					]
+				}
+			]
+		},
+		"static-apps": {
+			"title": "Static Apps",
+			"default": null,
+			"links": [{
+				"rel": "More Information",
+				"href": "https://developer.apple.com/documentation/devicemanagement/dock"
+			}],
+			"description": "An array of items located on the Applications side of the Dock and cannot be removed from that location.",
+			"propertyOrder": 140,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"title": "Application",
+						"properties": {
+							"mcx_typehint": {
+								"type": "integer",
+								"title": "MCX_TypeHint",
+								"description": "Position on the dock",
+								"default": null
+							},
+							"tile-type": {
+								"type": "string",
+								"title": "Tile-Type",
+								"description": "The default value for this is 'file-type'",
+								"options": {
+									"enum_titles": [
+										"Default"
+									],
+									"enum": [
+										"file-type"
+									]
+								}
+							},
+							"tile-data": {
+								"type": "object",
+								"title": "Dock Application",
+								"properties": {
+									"file-label": {
+										"type": "string",
+										"title": "Dock Application Name",
+										"description": "The name you'd like to display in the dock"
+									},
+									"file-data": {
+										"type": "object",
+										"title": "Dock Application Parameters",
+										"properties": {
+											"_CFURLString": {
+												"type": "string",
+												"title": "Path",
+												"description": "Path on the FileSystem to Application"
+											},
+											"_CFURLStringType": {
+												"type": "integer",
+												"title": "String Type",
+												"options": {
+													"enum_titles": [
+														"Default"
+													],
+													"enum": [
+														0
+													]
+												}
+											}
+										},
+										"required": [
+											"_CFURLString",
+											"_CFURLStringType"
+										]
+									},
+									"file-type": {
+										"type": "integer",
+										"title": "File Type",
+										"options": {
+											"enum_titles": [
+												"Default"
+											],
+											"enum": [
+												1
+											]
+										}
+									}
+								},
+								"required": [
+									"file-label",
+									"file-data",
+									"file-type"
+								]
+							}
+						}
+					}
+				}
+			]
+		},
+		"static-others": {
+			"title": "Static Others",
+			"description": "An array of items located on the Documents side of the Dock and cannot be removed from that location.",
+			"propertyOrder": 145,
+			"default": null,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"title": "Item",
+						"default": null,
+						"properties": {
+							"tile-type": {
+								"type": "string",
+								"title": "Item Type",
+								"default": null,
+								"description": "The type of item you would like to use",
+								"options": {
+									"enum_titles": [
+										"File",
+										"URL",
+										"Directory"
+									],
+									"enum": [
+										"File",
+										"URL",
+										"Directory"
+									]
+								}
+							},
+							"tile-data": {
+								"type": "object",
+								"title": "Dock Item",
+								"default": null,
+								"properties": {
+									"file-label": {
+										"type": "string",
+										"title": "Dock Item Name",
+										"default": null,
+										"description": "The name you'd like to display in the dock"
+									},
+									"file-data": {
+										"type": "object",
+										"title": "Dock Item Paramters",
+										"default": null,
+										"properties": {
+											"_CFURLString": {
+												"type": "string",
+												"title": "Path or URL",
+												"description": "Path on the FileSystem or URL to the Item"
+											},
+											"_CFURLStringType": {
+												"type": "integer",
+												"title": "String Type",
+												"options": {
+													"enum_titles": [
+														"Default"
+													],
+													"enum": [
+														0
+													]
+												}
+											}
+										},
+										"required": [
+											"_CFURLString",
+											"_CFURLStringType"
+										]
+									},
+									"file-type": {
+										"type": "integer",
+										"title": "File Type",
+										"options": {
+											"enum_titles": [
+												"File",
+												"URL",
+												"Directory"
+											],
+											"enum": [
+												1,
+												2,
+												3
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"static-only": {
+			"title": "Static Only",
+			"description": "If true, uses the static-apps and static-others dictionaries for the dock and ignores any items in the persistent-apps and persistent-others dictionaries. If false, the contents are merged with the static items listed first. - Default: false",
+			"propertyOrder": 150,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean",
+					"default": false,
+					"options": {
+						"enum_titles": [
+							"true - Use static-apps and static-others in the Dock and ignore all other items",
+							"false - Allow user modification of Dock items. - Default"
+						],
+						"enum": [
+							true,
+							false
+						]
+					}
+				}
+			]
+		}
+	}
+}
